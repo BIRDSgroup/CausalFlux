@@ -1,1 +1,1 @@
-# GRN-MM-Integrated-model-
+# GRN-MM Integrated model
