@@ -1,7 +1,7 @@
 # Instructions to run "TMS_actual_simulations.R" script
 
-1)  Make sure to use the correct working directory (wd) where all the files from this folder are present (**Change Line 50** in "TMS_actual_simulations.R" script)
-2)  Make sure to use the correct working directory (curr_wd) where all the files from this folder are present. Change the lines in "TM_1_simulation.m", "TM_2_simulation.m", and "TM_3_simulation.m" script to reflect this change
+1)  Make sure to use the correct working directory (wd) where all the files from this folder are present (**Change Line 50** in "TMS_actual_simulations.R" script).
+2)  Make sure to use the correct working directory (curr_wd) where all the files from this folder are present. Change the lines corresponding to **cur_wd** in "TM_1_simulation.m", "TM_2_simulation.m", "TM_3_simulation.m", "TM_1_odes.m", "TM_2_odes.m", and "TM_3_odes.m" scripts to reflect this change.
    
 3)  In the "Simulate_TM_1" function
    
