@@ -1,7 +1,9 @@
 # Instructions to run "TMS_actual_simulations.R" script
 
-1) **Change Line 50:** Make sure to use the correct working directory (wd) where all the files from this folder are present
-2)  In the "Simulate_TM_1" function
+1)  Make sure to use the correct working directory (wd) where all the files from this folder are present (**Change Line 50** in "TMS_actual_simulations.R" script)
+2)  Make sure to use the correct working directory (curr_wd) where all the files from this folder are present. Change the lines in "TM_1_simulation.m", "TM_2_simulation.m", and "TM_3_simulation.m" script to reflect this change
+   
+3)  In the "Simulate_TM_1" function
    
     a) arg1 - wd
     
@@ -9,7 +11,7 @@
     
     c) arg3 - WT/Gene KO (either "WT", "B", "E", "X", "A" or "Z" as input)
     
-3)  In the "Simulate_TM_2" function
+4)  In the "Simulate_TM_2" function
    
     a) arg1 - wd
     
@@ -17,10 +19,14 @@
     
     c) arg3 - WT/Gene KO (either "WT", "X", "A" or "Z" as input)
 
-4)  In the "Simulate_TM_3" function
+5)  In the "Simulate_TM_3" function
    
     a) arg1 - wd
     
     b) arg2 - exchange rates (either 3.2, 320 or 3200 as input)
     
     c) arg3 - WT/Gene KO (either "WT", "X" or "A" as input)
+
+
+
+
