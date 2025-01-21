@@ -27,6 +27,6 @@
     
     c) arg3 - WT/Gene KO (either "WT", "X" or "A" as input)
 
-
+6) Run all these cases one at a time to generate the desired output files.
 
 
