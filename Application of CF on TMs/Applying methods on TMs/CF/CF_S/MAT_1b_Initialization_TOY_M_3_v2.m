@@ -8,11 +8,11 @@ cd(curr_wd)
 
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
+initCobraToolbox(false);
+changeCobraSolver('gurobi', 'all');
 
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 eb_var = readvars("Exch_b.csv");
 
