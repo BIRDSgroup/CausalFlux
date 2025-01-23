@@ -4,10 +4,10 @@
 
 
 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 curr_wd = 'D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR_1/';
 cd(curr_wd)
