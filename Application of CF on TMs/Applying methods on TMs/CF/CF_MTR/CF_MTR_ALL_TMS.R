@@ -3757,17 +3757,21 @@ for(i in 1:length(ee)){
 library(tidyverse)
 curr_wd <- c("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR_1/")
 
+## Choose a binarization percentage from (0,0.25,0.5,0.75,1)
+p <- 0.5 
+## Give your value for maximum iterations or keep at 5 used in this work
+maxi <- 5
 
 KO_vec_1 <- c("WT","B","E","A","X","Z")
-TM1_Single_KO_CF_MTR(curr_wd,0.5,5,xun = KO_vec_1)  
+TM1_Single_KO_CF_MTR(curr_wd,p,maxi,xun = KO_vec_1)  
 
 
 KO_vec_2 <- c("WT","X","A","I")
-TM2_Single_KO_CF_MTR(curr_wd,0.5,5,xun = KO_vec_2) 
+TM2_Single_KO_CF_MTR(curr_wd,p,maxi,xun = KO_vec_2) 
 
 
 KO_vec_3 <- c("WT","X","A")
-TM3_Single_KO_CF_MTR(curr_wd,0.5,5,xun = KO_vec_3)  
+TM3_Single_KO_CF_MTR(curr_wd,p,maxi,xun = KO_vec_3)  
 
 dir.create(paste0(curr_wd,"/Res"))
 from <- curr_wd            #Current path of your folder
