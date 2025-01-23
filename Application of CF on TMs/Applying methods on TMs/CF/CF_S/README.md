@@ -1,6 +1,11 @@
 # Instructions to run CF-S on TM1, 2 and 3
 
-**Make sure all the folders (TM1,2 AND 3), ".m" files and ".mat" files and the ".R" script  are in the same working directory**
+*Make sure all the folders (TM1,2 AND 3), ".m" files and ".mat" files and the ".R" script  are in the same working directory*
+
+1) Running this script after making all the necessary modifications below will output the steady-state fluxes for TM1, TM2 and TM3 in WT and all gene KO cases under 3.2, 320 and 3200 exchange rates.
+2) It will create a folder "RES" containg the necesary KO output folders generated for 3.2, 320 and 3200 case for each TM1, TM2 and TM3.
+3) In each of the KO folders for the exchange rates, separate WT and gene folders will get generated.
+4) This folder will contain "FVA_to_check.xlsx" and "FBA_to_check.csv" that stores the final iteration values of the steady-state fluxes
 
 ## Changes in "CF_S_ALL_TMS.R" script
 1) Change the working directory in line 3937 to the working directory where all the files and codes from this folder are stored
