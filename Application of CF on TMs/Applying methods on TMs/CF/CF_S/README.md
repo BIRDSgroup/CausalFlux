@@ -9,7 +9,7 @@
 
 ## Changes in "CF_S_ALL_TMS.R" script
 1) Change the working directory in line 3937 to the working directory where all the files and codes from this folder are stored
-2) Give your choice of "P" and "m" in lines 3939 and 3941 
+2) Give your choice of "p" (binarization percentage) and "maxi" (maximum iterations) in lines 3939 and 3941 
 
 ### Changing the working directory in the below mentioned lines pointing to the GRN (structure and paramters learnt)data and metabolic model information 
 3) Change the lines in 1041, 1074 to working directory pointing to the "grn_3.2" folder inside "TM1" folder
