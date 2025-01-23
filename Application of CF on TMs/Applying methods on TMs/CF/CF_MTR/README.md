@@ -8,21 +8,21 @@
 4) This folder will contain "FVA_to_check.xlsx" and "FBA_to_check.csv" that stores the final iteration values of the steady-state fluxes
 
 ## Changes in "CF_MTR_ALL_TMS.R" script
-1) Change the working directory in line 3937 to the working directory where all the files and codes from this folder are stored
-2) Give your choice of "p" (binariazation percentage) and "maxi" (maximum iterations) in lines 3939 and 3941 
+1) Change the working directory in line 3758 to the working directory where all the files and codes from this folder are stored
+2) Give your choice of "p" (binariazation percentage) and "maxi" (maximum iterations) in lines 3761 and 3763 
 
 ### Changing the working directory in the below mentioned lines pointing to the GRN (structure and paramters learnt)data and metabolic model information 
-3) Change the lines in 1041, 1074 to working directory pointing to the "grn_3.2" folder inside "TM1" folder
-4) Change the lines in 1043, 1076 to working directory pointing to the "grn_320" folder inside "TM1" folder
-5) Change the lines in 1045, 1078 to working directory pointing to the "grn_3200" folder inside "TM1" folder
+3) Change the lines in 979, 1018 to working directory pointing to the "grn_3.2" folder inside "TM1" folder
+4) Change the lines in 981, 1020 to working directory pointing to the "grn_320" folder inside "TM1" folder
+5) Change the lines in 983, 1022 to working directory pointing to the "grn_3200" folder inside "TM1" folder
 
-6) Change the lines in 2346, 2379 to working directory pointing to the "grn_3.2" folder inside "TM2" folder
-7) Change the lines in 2348, 2381 to working directory pointing to the "grn_320" folder inside "TM2" folder
-8) Change the lines in 2350, 2383 to working directory pointing to the "grn_3200" folder inside "TM2" folder
+6) Change the lines in 2214, 2253 to working directory pointing to the "grn_3.2" folder inside "TM2" folder
+7) Change the lines in 2216, 2255 to working directory pointing to the "grn_320" folder inside "TM2" folder
+8) Change the lines in 2218, 2257 to working directory pointing to the "grn_3200" folder inside "TM2" folder
 
-9) Change the lines in 3650, 3683 to working directory pointing to the "grn_3.2" folder inside "TM3" folder
-7) Change the lines in 3652, 3685 to working directory pointing to the "grn_320" folder inside "TM3" folder
-8) Change the lines in 3654, 3687 to working directory pointing to the "grn_3200" folder inside "TM3" folder
+9) Change the lines in 3480, 3519 to working directory pointing to the "grn_3.2" folder inside "TM3" folder
+7) Change the lines in 3482, 3521 to working directory pointing to the "grn_320" folder inside "TM3" folder
+8) Change the lines in 3484, 3523 to working directory pointing to the "grn_3200" folder inside "TM3" folder
 
 ## Changes in all ".m" scripts (9 ".m" files are there in total)
 1) Make sure the "curr_wd" in all these files (except "getMaxTurnOverRate.m") are changed to the working director where the "CF_MTR_ALL_TMS.R" script is present
