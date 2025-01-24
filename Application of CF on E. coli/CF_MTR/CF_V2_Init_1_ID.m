@@ -3,10 +3,10 @@
 curr_wd = 'D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Parallel_Runs\CF_MTR';
 cd(curr_wd)
 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 % fileName = 'Ecoli_aerobic_no_sink.mat';  
 fileName = 'Ecoli_no_sink_no_media_aerobic_iML1515.mat';
