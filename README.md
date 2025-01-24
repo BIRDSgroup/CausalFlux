@@ -1,7 +1,8 @@
 # CausalFlux: an iterative causal surgery and linear optimization approach to model feedback in a gene-metabolite system
 
 This is the official repository of the paper "CausalFlux: an iterative causal surgery and linear optimization approach to model feedback in a gene-metabolite system" by Nilesh Subramanian, Pavan Kumar, Raghunathan Rengasamy, Nirav Bhatt, and Manikandan Narayanan.
-![GH_1-1](https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20TMs/GH_1-1.png)
+///![GH_1-1](https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20TMs/GH_1-1.png)
+<img src="https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20TMs/GH_1-1.png" alt="CausalFlux Overview" style="width:50%; height:auto;">
 
 This repository contains three sections:
 
@@ -9,7 +10,7 @@ This repository contains three sections:
 2. Application of CF framework on the toy models
 3. Application of CF framework on the real-world data
 ## License Preamble
-Copyright 2023 BIRDS Group, IIT Madras
+Copyright 2025 BIRDS Group, IIT Madras
 
 CF framework is a free pipeline: you can redistribute it and modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
