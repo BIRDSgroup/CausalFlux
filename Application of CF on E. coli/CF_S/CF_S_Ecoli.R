@@ -1153,7 +1153,7 @@ CF_S_Version_2 <- function(curr_wd,xun,pe,vgval,voval,mi, u){
   ## Metabolic module
   
   
-  load("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/GRN_REQ_WO_BIGG/train_data_bn.RData")
+  load("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/GRN_REQ_WO_BIGG/GE.RData")
   
   gge <- train_bin_set_1
   for(i in 1:ncol(gge))
