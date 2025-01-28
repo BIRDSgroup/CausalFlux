@@ -5,10 +5,10 @@ cd(curr_wd)
 
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 %fileName = 'Ecoli_model_aerobic_sink_no_media.mat';
 fileName = 'Ecoli_sink_no_media_aerobic_iML1515.mat';
