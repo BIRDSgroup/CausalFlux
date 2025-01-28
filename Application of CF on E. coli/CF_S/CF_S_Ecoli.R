@@ -1390,7 +1390,7 @@ curr_wd <- c("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/
 
 setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/Parallel_Runs/")
 library(readr)
-RD_check <- read_csv("Val_64_2.csv")
+RD_check <- read_csv("Ecoli_GT_keio_collection.csv")
 
 tu <- nrow(RD_check) 
 
@@ -1408,7 +1408,7 @@ for(i in 1:tu){
   s <- c(s,paste0("Case_P1_",i))
 }
 
-dir.create(paste0(curr_wd,"/Res"))
+dir.create(paste0(curr_wd,"/CF_S_Res"))
 from <- curr_wd            #Current path of your folder
 to   <- curr_wd            #Path you want to move it.
 
@@ -1416,7 +1416,7 @@ m <- s
 
 for(i in 1:tu){
   path1 <- paste0(from,"/",m[i])
-  path2 <- paste0(to,"/Res/",m[i])
+  path2 <- paste0(to,"/CF_S_Res/",m[i])
   file.rename(path1,path2)
 }
 
