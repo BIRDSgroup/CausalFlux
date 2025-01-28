@@ -3,11 +3,11 @@
 curr_wd = 'D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Parallel_Runs\CF_MTR';
 cd(curr_wd)
 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
 
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 % fileName = 'Ecoli_aerobic_no_sink.mat'; 
 fileName = 'Ecoli_no_sink_no_media_aerobic_iML1515.mat';
@@ -100,6 +100,8 @@ Ml = extra_mets;
 
 % mm.c(926) = 1;
 % sol = optimizeCbModel(mm);
+
+
 
  cd('D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Ishii_dataset\MM\LB_media\')
  LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");
