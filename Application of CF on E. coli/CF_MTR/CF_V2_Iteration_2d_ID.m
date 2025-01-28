@@ -1,12 +1,15 @@
 % matlab function - step 2d  - part 1
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
 
 curr_wd = 'D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Parallel_Runs\CF_MTR';
 cd(curr_wd)
+
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
+
+
 cp_r1 = "CP_round_P2_i.xlsx";
 cp_r1 = readtable(cp_r1);
 
