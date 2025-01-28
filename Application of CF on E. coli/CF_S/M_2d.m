@@ -1,12 +1,14 @@
 % matlab function - step 2d  - part 1
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
 
 curr_wd = 'D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Parallel_Runs\CF_S';
 cd(curr_wd)
+
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
+
 cp_r1 = "CP_round_P1_i.xlsx";
 cp_r1 = readtable(cp_r1);
 
@@ -40,6 +42,7 @@ TM_0 = readCbModel(fileName);
 % TM_0.lb(864) = -13;
 % % % % Glucose
 % TM_0.lb(975) = -9.5;
+
 
  cd('D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\CF_S\MM\LB_media\')
  LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");
