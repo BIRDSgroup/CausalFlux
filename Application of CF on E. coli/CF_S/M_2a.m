@@ -1,4 +1,5 @@
 % matlab function - step 2a  - FVA with 0 objective function 
+
 curr_wd = 'D:\work\Integrated_network_model\Ecoli_intg_ntwk\metabolic_aspect\Auto_RUN\Causal_Surgery\Parallel_Runs\CF_S';
 cd(curr_wd)
 
@@ -6,10 +7,10 @@ Updated_FVA_round_i = "Updated_FVA_round_P1_i.xlsx";
 Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","preserve");
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 
 % fileName = 'Ecoli_model_aerobic_sink_no_media.mat'; 
