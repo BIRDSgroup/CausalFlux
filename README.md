@@ -27,7 +27,11 @@ This section provides the following information:
 3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material.
 
 ### Section 3: Application of CF framework on the real-world data
-
+This section provides the following information:
+1) Codes/data for running the CF-S/MTR tp perform single gene KOs in _E. coli_
+2) Codes/data to reconstruct/learn the parameters of the GRN for _E. coli_
+3) Codes/data for running the CF-S/MTR tp perform double gene KOs in _E. coli_
+4) Codes/data for generating the necessary table (Table 2 in the manuscript)
 
 
 
