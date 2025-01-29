@@ -1,8 +1,8 @@
 dag_wl <- read_csv("DAG_WL.csv")
-GE <- read_csv("GE.csv")
+GE <- readRDS("D:/work/Git_Hub_CF/Applying CF on ecoli/GRN_Reconstruction/Code/GE.rds")
 
 library(bnlearn)
-bn_TR <- hc(total_ecoli_bin, whitelist = dag_wl,max.iter = 100, debug = T, score = "bde", maxp = 5)
+bn_TR <- hc(GE, whitelist = dag_wl,max.iter = 100, debug = T, score = "bde", maxp = 5)
 
 setwd("/data/users/cs20d300/WORK_MAIN/Integrated_ntwk/Ecoli/TRIMER/GRN/BDE/results/TRIMER/")
 saveRDS(bn_TR, "bn_TR.RDS")
