@@ -4,7 +4,7 @@
 
 ## Modifications in "CF_MTR_Ecoli.R" script
 1) Change the "curr_wd" (in line 1222) to the working directory where all the codes/files are from this folder. The results generated will be stored in this "curr_wd"
-2) Change the directory in line 1225 to the directory where "**Ecoli_GT_keio_coolection.csv**" is present (this csv is currently in "/Application of CF on Ecoli/Results/Actual_GT").
+2) Change the directory in line 1225 to the directory where "**Ecoli_GT_keio_collection.csv**" is present (this csv is currently in "/Application of CF on Ecoli/Results/Actual_GT").
 3) Change the line in 977 to make sure the directory is pointed to the "GRN_RED_WO_BIGG" folder
 4) Change the line in 984 to load the "GE.RData" in the "GRN_RED_WO_BIGG" folder
 5) Change the line in 1015 to make sure the directory is pointed to the "MM_REQ" folder
@@ -15,7 +15,7 @@
 
 
 ## For faster/parallel runs
-1) Split the "**Ecoli_GT_keio_coolection.csv**" into multiple parts (say **n**)
+1) Split the "**Ecoli_GT_keio_collection.csv**" into multiple parts (say **n**)
 2) Make **n** copies of this folder and change the necessary lines in the codes of each folder (see above) to reflect this change
 3) Line 1225 from each of these **n** ".R" scripts should point to the **n** data splits respectively
 4) Open **n** terminals and run the ".R" script from the corresponding folders
