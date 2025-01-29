@@ -1,6 +1,6 @@
 # Instructions to run CF-MTR on TM1, 2 and 3
 
-*Make sure all the folders (TM1,2 AND 3), ".m" files, "getMaxTurnOverRate.m", ".mat" files, and the ".R" script  are in the same working directory*
+*Make sure all the folders (TM1, 2 AND 3), ".m" files, "getMaxTurnOverRate.m", ".mat" files, and the ".R" script  are in the same working directory*
 
 1) Running this script after making all the necessary modifications below will output the steady-state fluxes for TM1, TM2 and TM3 in WT and all gene KO cases under 3.2, 320 and 3200 exchange rates.
 2) It will create a folder "RES" containg the necesary KO output folders generated for 3.2, 320 and 3200 case for each TM1, TM2 and TM3.
