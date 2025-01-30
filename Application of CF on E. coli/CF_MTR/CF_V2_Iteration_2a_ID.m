@@ -158,32 +158,35 @@ x_model_round_i.lb = Updated_FVA_round_i.new_lower_bounds;
 x_model_round_i.c(2669)= 1;
 
 sol = optimizeCbModel(x_model_round_i);
-writematrix(sol.v,"FBA_to_check_P2.csv")
 
-
-mvec = find(ismember(x_model_round_i.mets,Ml)); 
-N = length(mvec);
-Curr_TR = zeros(1,N); 
-
-% step 2 - For loop for each mets present in the Mets_L
-for i = 1:length(mvec)
-    
-   Curr_TR(i) = 0.5 * (sum(abs(mm.S(mvec(i),:).*transpose(sol.v))));   %  resolve this issue
-    
-      
+if sol.stat==1
+ writematrix(sol.v,"FBA_to_check_P2.csv")
+ 
+ 
+ mvec = find(ismember(x_model_round_i.mets,Ml)); 
+ N = length(mvec);
+ Curr_TR = zeros(1,N); 
+ 
+ % step 2 - For loop for each mets present in the Mets_L
+ for i = 1:length(mvec)
+     
+    Curr_TR(i) = 0.5 * (sum(abs(mm.S(mvec(i),:).*transpose(sol.v))));   %  resolve this issue
+     
+       
+ end
+ 
+ 
+ Curr_TR_ = transpose(Curr_TR);
+ % Curr_TR_ = getMaxTurnOverRate(x_model_round_i,Ml);
+ 
+ e = find(ismember(x_model_round_i.mets,Ml));
+ es = x_model_round_i.mets(mvec);
+ tr_1 = num2cell(Curr_TR_);
+ C3 = [num2cell(e),es,tr_1];
+ 
+ cd(curr_wd)
+ writecell(C3,"Iteration_Turnover.csv")
 end
-
-
-Curr_TR_ = transpose(Curr_TR);
-% Curr_TR_ = getMaxTurnOverRate(x_model_round_i,Ml);
-
-e = find(ismember(x_model_round_i.mets,Ml));
-es = x_model_round_i.mets(mvec);
-tr_1 = num2cell(Curr_TR_);
-C3 = [num2cell(e),es,tr_1];
-
-cd(curr_wd)
-writecell(C3,"Iteration_Turnover.csv")
 
 
 
