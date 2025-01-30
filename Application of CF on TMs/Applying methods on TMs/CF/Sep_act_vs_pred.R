@@ -1,63 +1,5 @@
 ######################################################################################################
 ######################  Functions for this code
-
-# obtain_df <- function(tm, p, ex, co){
-#   library(readxl)
-#   setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/CF_MTR/",tm,"/",p,"/",ex,"/",co,"/"))
-#   
-#   y <- read.csv("FBA_to_check.csv", header = F)
-#   FBA_WT <- y$V1
-#   
-#   z <- read_xlsx(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/CF_MTR/",tm,"/",p,"/",ex,"/",co,"/FVA_to_check.xlsx"), col_names  = F)
-#   
-#   z <- as.data.frame(z)
-#   FVA_min_WT <- z[,2]
-#   FVA_max_WT <- z[,3]
-#   
-#   tg_df <- data.frame(FBA_WT, FVA_min_WT, FVA_max_WT)
-#   colnames(tg_df) <- c("FBA","FVA_min","FVA_max") 
-#   tg_df$condition <- rep(co, nrow(tg_df))
-#   
-#   return(tg_df)}
-
-# 
-# obtain_df <- function(tm, ex, co){
-#   library(readxl)
-#   #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR/",tm,"/Results/",ex,"/KO_data_",tm,"_",ex,"/",co))
-#   setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR/",tm,"/Alt_SC/KO_data_",tm,"_",ex,"/",co))
-#   
-#   
-#   y <- read.csv("FBA_to_check.csv", header = F)
-#   FBA_WT <- y$V1
-#   
-#   #z <- read_xlsx(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR/",tm,"/Results/",ex,"/KO_data_",tm,"_",ex,"/",co,"/FVA_to_check.xlsx"), col_names  = F)
-#   z <- read_xlsx(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_MTR/",tm,"/Alt_SC/KO_data_",tm,"_",ex,"/",co,"/FVA_to_check.xlsx"), col_names  = F)
-#   
-#   
-#   z <- as.data.frame(z)
-#   FVA_min_WT <- z[,2]
-#   FVA_max_WT <- z[,3]
-#   
-#   tg_df <- data.frame(FBA_WT, FVA_min_WT, FVA_max_WT)
-#   colnames(tg_df) <- c("FBA","FVA_min","FVA_max") 
-#   tg_df$condition <- rep(co, nrow(tg_df))
-#   
-#   return(tg_df)}
-# 
-
-
-# get_overall_df <- function(tm, p, ex, kv){
-#   ddf <- data.frame()
-#   
-#   for(i in 1:length(kv)){
-#     wt <- obtain_df(tm,p,ex,kv[i])
-#     ddf <- rbind(ddf,wt)
-#   }
-#   
-#   
-#   return(ddf)}
-
-
 get_overall_df <- function(tm, ex, kv){
   ddf <- data.frame()
   
@@ -80,55 +22,18 @@ act_vs_pred_sep_plots_tm1 <- function(ec,g, somed){
   if(ec == 3.2){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_1.csv", header = TRUE)
-    
-    
-    # tm <- "TM1"
-    # #p <- "Per_0"
-    # ex <- 3.2
-    # kv <- c("WT","B","E","Z","A","X")
-    # 
-    # #cfmtr_tm1_3.2_per0 <- get_overall_df(tm,p,ex,kv)
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_1.csv", header = TRUE)
-    
-    # 
-    # tm <- "TM1"
-    # #p <- "Per_0"
-    # ex <- 320
-    # kv <- c("WT","B","E","Z","A","X")
-    # 
-    # #cfmtr_tm1_3.2_per0 <- get_overall_df(tm,p,ex,kv)
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
+
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_1.csv", header = TRUE)
     
-    # 
-    # tm <- "TM1"
-    # #p <- "Per_0"
-    # ex <- 3200
-    # kv <- c("WT","B","E","Z","A","X")
-    # 
-    # #cfmtr_tm1_3.2_per0 <- get_overall_df(tm,p,ex,kv)
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }
@@ -247,55 +152,16 @@ act_vs_pred_sep_plots_tm2 <- function(ec,g, somed){
   if(ec == 3.2){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_2.csv", header = TRUE)
-    
-    
-    # tm <- "TM2"
-    # #p <- "Per_0"
-    # ex <- 3.2
-    # kv <- c("WT","I","X","A")
-    # 
-    # #cfmtr_tm1_3.2_per0 <- get_overall_df(tm,p,ex,kv)
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_2.csv", header = TRUE)
-    
-    
-    # tm <- "TM2"
-    # #p <- "Per_0"
-    # ex <- 320
-    # kv <- c("WT","I","X","A")
-    # 
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_2.csv", header = TRUE)
-    
-    
-    # tm <- "TM2"
-    # #p <- "Per_0"
-    # ex <- 3200
-    # kv <- c("WT","I","X","A")
-    # 
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }
@@ -412,55 +278,16 @@ act_vs_pred_sep_plots_tm3 <- function(ec,g, somed){
   if(ec == 3.2){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_3.csv", header = TRUE)
-    
-    # 
-    # tm <- "TM3"
-    # #p <- "Per_0"
-    # ex <- 3.2
-    # kv <- c("WT","A","X")
-    # 
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_3.csv", header = TRUE)
-    
-    
-    # tm <- "TM3"
-    # #p <- "Per_0"
-    # ex <- 320
-    # kv <- c("WT","A","X")
-    # 
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_3.csv", header = TRUE)
-    
-    # 
-    # tm <- "TM3"
-    # #p <- "Per_0"
-    # ex <- 3200
-    # kv <- c("WT","A","X")
-    # 
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     ### 3.2
     d1 <- act_3.2
   }
