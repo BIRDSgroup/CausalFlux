@@ -33,67 +33,10 @@ cor_dat_df <- function(df1, kv, ex){
 
 #######################################################################################################
 ######################   TM1 
-# Per_0"
-
-# Obtain_TM1_overall <- function(perc){
-#   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/TM1/new")
-#   ###############  3.2
-#   act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_1.csv", header = TRUE)
-#   
-#   tm <- "TM1"
-#   p <- perc
-#   ex <- 3.2
-#   
-#   kv <- c("WT","B","E","Z","A","X")
-#   cfmtr_tm1_3.2_per0 <- get_overall_df(tm,p,ex,kv)
-#   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
-#   
-#   cfmtr_tm1_3.2_per0_corr_data <- cor_dat_df(act_3.2,cfmtr_tm1_3.2_per0, kv_vec, 3.2)
-#   ############### 320
-#   act_320 <- read.csv("Actual_Pred_data_320_TM_1.csv", header = TRUE)
-#   
-#   tm <- "TM1"
-#   p <- perc
-#   ex <- 320
-#   
-#   kv <- c("WT","B","E","Z","A","X")
-#   cfmtr_tm1_320_per0 <- get_overall_df(tm,p,ex,kv)
-#   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
-#   
-#   
-#   cfmtr_tm1_320_per0_corr_data <- cor_dat_df(act_320,cfmtr_tm1_320_per0, kv_vec, 320)
-#   
-#   ############### 3200
-#   act_3200 <- read.csv("Actual_Pred_data_3200_TM_1.csv", header = TRUE)
-#   
-#   tm <- "TM1"
-#   p <- perc
-#   ex <- 3200
-#   
-#   kv <- c("WT","B","E","Z","A","X")
-#   cfmtr_tm1_3200_per0 <- get_overall_df(tm,p,ex,kv)
-#   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
-#   cfmtr_tm1_3200_per0_corr_data <- cor_dat_df(act_3200,cfmtr_tm1_3200_per0, kv_vec, 3200)
-#   
-#   
-#   og <- rbind(cfmtr_tm1_3.2_per0_corr_data,cfmtr_tm1_320_per0_corr_data,cfmtr_tm1_3200_per0_corr_data)
-#   og$TMS <- rep("TM1",nrow(og))
-#   
-#   
-# return(og)}
-
-
-  
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1/")
   ###############  3.2
   act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_1.csv", header = TRUE)
-  
-  # tm <- "TM1"
-  # #p <- perc
-  # ex <- 3.2
-  # 
-  # kv <- c("WT","B","E","Z","A","X")
-  # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
+
   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
   
   a <- cor_dat_df(act_3.2, kv_vec, 3.2)
@@ -101,14 +44,7 @@ cor_dat_df <- function(df1, kv, ex){
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1/")
   act_320 <- read.csv("Actual_Pred_data_320_TM_1.csv", header = TRUE)
   
-  # tm <- "TM1"
-  # #p <- perc
-  # ex <- 320
-  # 
-  # kv <- c("WT","B","E","Z","A","X")
-  # cfmtr_tm1_320_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
-  
   
   b <- cor_dat_df(act_320, kv_vec, 320)
   
@@ -116,38 +52,19 @@ cor_dat_df <- function(df1, kv, ex){
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM1/")
   act_3200 <- read.csv("Actual_Pred_data_3200_TM_1.csv", header = TRUE)
   
-  # tm <- "TM1"
-  # #p <- perc
-  # ex <- 3200
-  # 
-  # kv <- c("WT","B","E","Z","A","X")
-  # cfmtr_tm1_3200_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","B KO","E KO","Z KO","A KO","X KO")
   c <- cor_dat_df(act_3200, kv_vec, 3200)
   
   
   overall_SC_cfmtr_tm1_per0_corr_data <- rbind(a,b,c)
   overall_SC_cfmtr_tm1_per0_corr_data$TMS <- rep("TM1",nrow(overall_SC_cfmtr_tm1_per0_corr_data))
-  
-  
-
-
-# overall_SC_cfmtr_tm1_per0_corr_data <- Obtain_TM1_overall(1)
 
 #######################################################################################################
 ######################   TM2 
-# Per_0"
-
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
   ###############  3.2
   act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_2.csv", header = TRUE)
   
-  # tm <- "TM2"
-  # #p <- perc
-  # ex <- 3.2
-  # 
-  # kv <- c("WT","I","X","A")
-  # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","I KO","X KO","A KO")
   
   p <- cor_dat_df(act_3.2, kv_vec, 3.2)
@@ -155,54 +72,27 @@ cor_dat_df <- function(df1, kv, ex){
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
   act_320 <- read.csv("Actual_Pred_data_320_TM_2.csv", header = TRUE)
   
-  # tm <- "TM2"
-  # #p <- perc
-  # ex <- 320
-  # 
-  # kv <- c("WT","I","X","A")
-  # cfmtr_tm1_320_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","I KO","X KO","A KO")
-  
   
   q <- cor_dat_df(act_320, kv_vec, 320)
   
   ############### 3200
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM2/")
   act_3200 <- read.csv("Actual_Pred_data_3200_TM_2.csv", header = TRUE)
-  
-  # tm <- "TM2"
-  # #p <- perc
-  # ex <- 3200
-  # 
-  # kv <- c("WT","I","X","A")
-  # cfmtr_tm1_3200_per0 <- get_overall_df(tm,ex,kv)
+
   kv_vec <- c("WT","I KO","X KO","A KO")
   r <- cor_dat_df(act_3200, kv_vec, 3200)
   
   
   overall_SC_cfmtr_tm2_per0_corr_data  <- rbind(p,q,r)
   overall_SC_cfmtr_tm2_per0_corr_data$TMS <- rep("TM2",nrow(overall_SC_cfmtr_tm2_per0_corr_data))
-  
-  
-
-
-#overall_SC_cfmtr_tm2_per0_corr_data <- Obtain_TM2_overall(2)
 
 #######################################################################################################
 ######################   TM3 
-# Per_0"
-
-
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
   ###############  3.2
   act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_3.csv", header = TRUE)
   
-  # tm <- "TM3"
-  # #p <- perc
-  # ex <- 3.2
-  # 
-  # kv <- c("WT","A","X")
-  # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","A KO","X KO")
   
   t <- cor_dat_df(act_3.2, kv_vec, 3.2)
@@ -210,14 +100,7 @@ cor_dat_df <- function(df1, kv, ex){
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
   act_320 <- read.csv("Actual_Pred_data_320_TM_3.csv", header = TRUE)
   
-  # tm <- "TM3"
-  # #p <- perc
-  # ex <- 320
-  # 
-  # kv <- c("WT","A","X")
-  # cfmtr_tm1_320_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","A KO","X KO")
-  
   
   u <- cor_dat_df(act_320, kv_vec, 320)
   
@@ -225,12 +108,6 @@ cor_dat_df <- function(df1, kv, ex){
   setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM3/")
   act_3200 <- read.csv("Actual_Pred_data_3200_TM_3.csv", header = TRUE)
   
-  # tm <- "TM3"
-  # #p <- perc
-  # ex <- 3200
-  # 
-  # kv <- c("WT","A","X")
-  # cfmtr_tm1_3200_per0 <- get_overall_df(tm,ex,kv)
   kv_vec <- c("WT","A KO","X KO")
   v <- cor_dat_df(act_3200, kv_vec, 3200)
   
@@ -243,9 +120,6 @@ cor_dat_df <- function(df1, kv, ex){
 
 ##############################################################################
 ################################## Calling the functions
-
-
-#overall_SC_cfmtr_tm1_per0_corr_data <- Obtain_TM1_overall("Per_0")
 
 SC_TMS_df <- rbind(overall_SC_cfmtr_tm1_per0_corr_data,overall_SC_cfmtr_tm2_per0_corr_data,overall_SC_cfmtr_tm3_per0_corr_data)
 
@@ -299,42 +173,49 @@ ggsave("CF_MTR_FVA_MIN_vs_CF_MTR_FVA_MAX.jpeg")
 ########################## COMPARING CF-S WITH OTHER METHODS
 
 ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-
 ggsave("TRIMER_all_vs_CF_S_FVA_MAX.pdf")
 ggsave("TRIMER_all_vs_CF_S_FVA_MAX.jpeg")
+
+ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
+ggsave("TRIMER_all_vs_CF_S_FVA_MAX_exch_rates.pdf")
+ggsave("TRIMER_all_vs_CF_S_FVA_MAX_exch_rates.jpeg")
+
+
 
 
 
 ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05,alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05,alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-
 ggsave("GIMME_FVA_MAX_vs_CF_S_FVA_MAX.pdf")
 ggsave("GIMME_FVA_MAX_vs_CF_S_FVA_MAX.jpeg")
+
+ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05,alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
+ggsave("GIMME_FVA_MAX_vs_CF_S_FVA_MAX_exch_rates.pdf")
+ggsave("GIMME_FVA_MAX_vs_CF_S_FVA_MAX_exch_rates.jpeg")
+
+
 
 
 ########################## COMPARING CF-MTR WITH OTHER METHODS
 
 ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-
 ggsave("TRIMER_all_vs_CF_MTR_FVA_MAX.pdf")
 ggsave("TRIMER_all_vs_CF_MTR_FVA_MAX.jpeg")
+
+ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
+ggsave("TRIMER_all_vs_CF_MTR_FVA_MAX_exch_rates.pdf")
+ggsave("TRIMER_all_vs_CF_MTR_FVA_MAX_exch_rates.jpeg")
+
+
 
 
 
 ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
-ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-
 ggsave("GIMME_FVA_MAX_vs_CF_MTR_FVA_MAX.pdf")
 ggsave("GIMME_FVA_MAX_vs_CF_MTR_FVA_MAX.jpeg")
+
+ggplot(SC_TMS_df, aes(x = GIMME_FVA_max_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for GIMME (FVA max) and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('darkslategray2','deepskyblue3', 'blue'))+labs(color = "Exchange rates")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = as.factor(Exchange)),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
+ggsave("GIMME_FVA_MAX_vs_CF_MTR_FVA_MAX_exch_rates.pdf")
+ggsave("GIMME_FVA_MAX_vs_CF_MTR_FVA_MAX_exch_rates.jpeg")
 
 
 
