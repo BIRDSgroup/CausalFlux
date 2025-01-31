@@ -74,6 +74,17 @@ Inputs:
 
 ### (B) To be changed in the ".m" scripts
 
+#### M_1b.m
+
+1) Change line 3 for current working directory where the codes/data for running the whole CF framework is stored
+   
+2) Change line 13 for metabolic model name
+
+3) Change line 22 and 23 for changing the glucose adn oxygen exchange reactions in the metabolic model
+
+4) Change line 25 to modify the start and end indices of the sink reactions 
+
+
 ### (C) To be given as arguments to the CF function (in the ".R" script)
 
 1) Check line 1386 when the function is called for performing single gene KO
