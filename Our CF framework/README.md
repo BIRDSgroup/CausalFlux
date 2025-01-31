@@ -4,7 +4,7 @@
 This file will provide a walk-through of our CF framework. The inputs are same for the CF-S and CF-MTR versions. 
 
 ## Inputs for the CF framework: 
-### (A) Need to changed in the ".R" scripts
+### (A) To be changed in the ".R" scripts
 1) **Reconstructed GRN and the parameters learned from this GRN**
    
    GRN reconstruction and parameter leazrning can be done independently, and should be stored in the folder **GRN_REQ_WO_BIGG**. The working directory of this folder must be set in the ".R" scripts for CF-S and CF-MTR.
@@ -36,10 +36,13 @@ This file will provide a walk-through of our CF framework. The inputs are same f
    |gene_name|Gene symbol |
 
    This data (as RDS data) should be stored in the folder **MM_REQ**. The working directory of this folder must be set in the ".R" scripts for CF-S and CF-MTR.
-5)  **Metabolic model**
+   
+### (B) To be changed in the ".m" scripts
+1)  **Metabolic model**
 
     Metabolic model corresponding to the system being studied. In CF-S, add sink reactions (extra reactions added to metabolic model) for the metabolites that have feedback to the genes in GRN. In the case of CF-MTR, keep the metabolic model as such (without sink reactions)
-### (B) Need to be given as arguments to the CF function
+
+### (C) To be given as arguments to the CF function
 
 This "CF_function" (see below) is called as "CF_S_Func" in the case of CF-S and "CF_MTR_Func" in the case of CF-MTR. Nevertheless, the inputs to these functions are still the same.
 ```R
@@ -59,10 +62,12 @@ Inputs:
 
 (f) mi: Maximum number of iterations
 
-(g) u: If there are multiple genes to be KO one by one, this can be sent as a vector. so "u" here corresponds to the index of the gene being perturbed
+(g) u: It corresponds to the index of the gene being perturbed. 
 
 
-
+## CF-S:
+### (A) Need to changed in the ".R" script
+1) Check lines  
 
 
 
