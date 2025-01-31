@@ -40,7 +40,7 @@ This file will provide a walk-through of our CF framework. The inputs are same f
 ### (B) To be changed in the ".m" scripts
 1)  **Metabolic model**
 
-    Metabolic model corresponding to the system being studied. In CF-S, add sink reactions (extra reactions added to metabolic model) for the metabolites that have feedback to the genes in GRN. In the case of CF-MTR, keep the metabolic model as such (without sink reactions)
+    Metabolic model corresponding to the system being studied. In CF-S, add sink reactions (extra reactions added to metabolic model) for the metabolites that have feedback to the genes in GRN. In the case of CF-MTR, keep the metabolic model as such (without sink reactions). Make sure to load the correct metabolic models in all the three ".m" scripts.
 
 ### (C) To be given as arguments to the CF function
 
@@ -65,12 +65,20 @@ Inputs:
 (g) u: It corresponds to the index of the gene being perturbed. 
 
 
-## CF-S:
+## Instructions with respect to CF-S:
 ### (A) Need to changed in the ".R" script
-1) Check lines  
 
+1) Change lines 1148, 1155 to reflect the changes for A.1 and A.2 above
+   
+2) Change lines 1176 to reflect the changes for A.3 and A.4 above
 
+### (B) To be changed in the ".m" scripts
 
+### (C) To be given as arguments to the CF function (in the ".R" script)
+
+1) Check line 1386 when the function is called for performing single gene KO
+   
+2) Check line 1390 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
 
 
