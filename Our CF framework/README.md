@@ -41,4 +41,26 @@ This file will provide a walk-through of our CF framework. The inputs are same f
     Metabolic model corresponding to the system being studied. In CF-S, add sink reactions (extra reactions added to metabolic model) for the metabolites that have feedback to the genes in GRN. In the case of CF-MTR, keep the metabolic model as such (without sink reactions)
 ### (B) Need to be given as arguments to the CF function
 
-1) 
+This "CF_function" (see below) is called as "CF_S_Func" in the case of CF-S and "CF_MTR_Func" in the case of CF-MTR. Nevertheless, the inputs to these functions are still the same.
+```R
+CF_function(curr_wd, xun, pe, vgval, voval, mi, u)
+```
+Inputs: 
+
+(a) curr_wd: working directory where all the ".R", ".m", ".mat" (metabolic model) and other folders like "GRN_REQ_WO_BIGG", "MM_REQ" are present. This is also where the results will be stored
+(b) xun: Gene (gene symbol) to be perturbed/knocked out
+(c) pe: Binarization percentage
+(d) vgval: Glucose uptake value (in mmol/gDCW/hr)
+(e) voval: Oxygen uptake value (in mmol/gDCW/hr)
+(f) mi: Maximum number of iterations
+(g) u: If there are multiple genes to be KO one by one, this can be sent as a vector. so "u" here corresponds to the index of the gene being perturbed
+
+
+
+
+
+
+
+
+
+
