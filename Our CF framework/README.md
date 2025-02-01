@@ -72,6 +72,8 @@ Inputs:
    
 2) Change lines 1176 to reflect the changes for A.3 and A.4 above
 
+3) Change line 1318 to set the start adn end indices of the sink reactions added to the model. This is input to the "to_check_sink_rxn_iter" function.
+
 ### (B) To be changed in the ".m" scripts
 
 #### M_1b.m
@@ -80,7 +82,7 @@ Inputs:
    
 2) Change line 13 for metabolic model name
 
-3) Change line 22 and 23 for changing the glucose adn oxygen exchange reactions in the metabolic model
+3) Change line 22 and 23 for changing the glucose and oxygen exchange reactions in the metabolic model
 
 4) Change line 25 to modify the start and end indices of the sink reactions 
 
