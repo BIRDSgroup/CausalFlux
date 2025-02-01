@@ -72,7 +72,7 @@ Inputs:
    
 2) Change lines 1176 to reflect the changes for A.3 and A.4 above
 
-3) Change line 1318 to set the start adn end indices of the sink reactions added to the model. This is input to the "to_check_sink_rxn_iter" function.
+3) Change line 1318 to set the start and end indices of the sink reactions added to the model. This is input to the "to_check_sink_rxn_iter" function.
 
 ### (B) To be changed in the ".m" scripts
 
