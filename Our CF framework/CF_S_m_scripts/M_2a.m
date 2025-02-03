@@ -6,10 +6,10 @@ Updated_FVA_round_i = "Updated_FVA_round_P1_i.xlsx";
 Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","preserve");
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
+%load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
+%restoreEnvironment(environment);
 
 
 % fileName = 'Ecoli_model_aerobic_sink_no_media.mat'; 
