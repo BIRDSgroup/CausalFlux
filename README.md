@@ -34,10 +34,10 @@ This section provides the following information:
 4) Codes/data for generating the necessary table (Table 2 in the manuscript)
 
 ### Glossary
-CF - Causal Flux (our methodology)
-CF-S and CF-MTR - Variants of CF (CF-S is CF-Sink and CF-MTR is CF-Metabolite Turnover)
-TM - Toy Model
-GRN - Gene Regulatory Network
+- CF - Causal Flux (our methodology)
+- CF-S and CF-MTR - Variants of CF (CF-S is CF-Sink and CF-MTR is CF-Metabolite Turnover)
+- TM - Toy Model
+- GRN - Gene Regulatory Network
 
 
 
