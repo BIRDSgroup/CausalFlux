@@ -38,6 +38,7 @@ This section provides the following information:
 - CF-S and CF-MTR - Variants of CF (CF-S is CF-Sink and CF-MTR is CF-Metabolite Turnover)
 - TM - Toy Model
 - GRN - Gene Regulatory Network
+- KO - Knock out
 
 
 
