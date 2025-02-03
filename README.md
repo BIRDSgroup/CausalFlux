@@ -33,13 +33,24 @@ This section provides the following information:
 3) Codes/data for running the CF-S/MTR tp perform double gene KOs in _E. coli_
 4) Codes/data for generating the necessary table (Table 2 in the manuscript)
 
-### Glossary
+## Glossary
 - CF - Causal Flux (our methodology)
 - CF-S and CF-MTR - Variants of CF (CF-S is CF-Sink and CF-MTR is CF-Metabolite Turnover)
 - TM - Toy Model
 - GRN - Gene Regulatory Network
 - KO - Knock out
 
+## Session information 
+### R 
+R version 4.2.1 (2022-06-23 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 26100)
 
+R Packages required:
+readxl, matlabr, bnlearn, dplyr, writexl, tidyverse , caret, ggplot2, ggpubr, ggExtra, gridExtra, ff
+(ff_4.0.12, bit_4.0.5, gridExtra_2.3, ggExtra_0.10.1, ggpubr_0.6.0, caret_6.0-94, lattice_0.20-45, lubridate_1.9.2, forcats_1.0.0, stringr_1.5.0, purrr_1.0.1, readr_2.1.4,        
+tidyr_1.3.0, tibble_3.2.1, ggplot2_3.4.4, tidyverse_2.0.0, writexl_1.4.2, dplyr_1.1.2, bnlearn_4.8.1, matlabr_1.5.2, readxl_1.4.2, graph_1.76.0, BiocGenerics_0.44.0)
 
+### MATLAB
+9.12.0.2039608 (R2022a) Update 5
 
