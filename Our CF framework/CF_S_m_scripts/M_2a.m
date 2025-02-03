@@ -12,9 +12,6 @@ Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","prese
 %restoreEnvironment(environment);
 
 
-% fileName = 'Ecoli_model_aerobic_sink_no_media.mat'; 
-% fileName = 'TR_based_modified_ecoli.mat';
-
 fileName = 'Ecoli_sink_no_media_aerobic_iML1515.mat';
 
 TM_0 = readCbModel(fileName);
