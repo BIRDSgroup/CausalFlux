@@ -1,4 +1,4 @@
-# A walk-thorugh of our CF framework
+# A walk-through of our CF framework
 
 ## Introduction
 This file will provide a walk-through of our CF framework. The inputs are same for the CF-S and CF-MTR versions. 
