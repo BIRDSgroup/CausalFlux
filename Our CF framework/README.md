@@ -82,10 +82,33 @@ Inputs:
    
 2) Change line 13 for metabolic model name
 
-3) Change line 22 and 23 for changing the glucose and oxygen exchange reactions in the metabolic model
+3) Change line 22 and 23 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
 
-4) Change line 25 to modify the start and end indices of the sink reactions 
+4) Change line 25 to modify the start and end indices of the sink reactions
 
+5) Change line 42, 56 to index number corresponding to the biomass reaction in the metabolic model
+
+#### M_2a.m
+
+1) Change line 2 for current working directory where the codes/data for running the whole CF framework is stored
+
+2) Change line 15 for metabolic model name
+
+3) Change line 25 and 26 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
+
+4) Change line 28 to modify the start and end indices of the sink reactions
+
+5) Change line 32, 51 to index number corresponding to the biomass reaction in the metabolic model
+
+#### M_2d.m
+
+1) Change line 8 for current working directory where the codes/data for running the whole CF framework is stored
+
+2)  Change line 15 for metabolic model name
+
+3)  Change line 24 and 25 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
+
+4)  Change line 27 to modify the start and end indices of the sink reactions
 
 ### (C) To be given as arguments to the CF function (in the ".R" script)
 
