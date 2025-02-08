@@ -116,6 +116,13 @@ Inputs:
    
 2) Check line 1390 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
+## Instructions with respect to CF-MTR:
+### (A) Need to changed in the ".R" script
+
+1) Change lines 970, 977 to reflect the changes for A.1 and A.2 above
+   
+2) Change lines 1008 to reflect the changes for A.3 and A.4 above
+
 
 
 
