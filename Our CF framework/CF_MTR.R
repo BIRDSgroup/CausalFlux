@@ -954,25 +954,18 @@ CF_MTR_Func <- function(curr_wd,xun,pe,vgval,voval,mi, u){
   library(writexl)
   library(tidyverse)
   
-  
   percen <- pe
   
   setwd(curr_wd)
-  
-  
   
   vg <-  vgval
   vo <- voval
   maxiter = mi
   
-  
   write.csv(vg, file = "Exch_G.csv", row.names = FALSE)
   write.csv(vo, file = "Exch_O.csv", row.names = FALSE)
-  
-  #xu_n <- c("WT","nhaR","murC","murD","ftsL","dksA")
-  
+
   xu_n <- xun
-  
   # setwd("/data_birdshire/users/nilesh/GRN_MM_Project/Ecoli_analysis/BN_learn/GRN_reconstruction/Results/")
   setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/Ishii_dataset/GRN_REQ_WO_BIGG/")
   grn_SL <- readRDS("bn_TR.RDS")
