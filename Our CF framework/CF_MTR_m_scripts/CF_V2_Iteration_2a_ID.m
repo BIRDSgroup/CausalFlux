@@ -120,7 +120,7 @@ x_model_round_i.lb = Updated_FVA_round_i.new_lower_bounds;
 % cd(curr_wd)
 % writecell(fva_op_round_i,"FVA_to_check_P2.xlsx")
 
-x_model_round_i.c(2669)= 1;
+%x_model_round_i.c(2669)= 1;
 
 sol = optimizeCbModel(x_model_round_i);
 writematrix(sol.v,"FBA_to_check_P2.csv")
