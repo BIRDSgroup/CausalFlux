@@ -141,7 +141,7 @@ mm_1.c(2669)=1;
 % cd(curr_wd)
 % writecell(fva_op_round_1,"FVA_to_check_P2.xlsx")
 
-mm_1.c(2669)=1;
+%mm_1.c(2669)=1;
 
 sol = optimizeCbModel(mm_1);
 writematrix(sol.v,"FBA_to_check_P2.csv")
