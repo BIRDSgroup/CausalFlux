@@ -123,6 +123,10 @@ Inputs:
    
 2) Change lines 1008 to reflect the changes for A.3 and A.4 above
 
+### (C) To be given as arguments to the CF function (in the ".R" script)
 
+1) Check line 1214 when the function is called for performing single gene KO
+   
+2) Check line 1216 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
 
