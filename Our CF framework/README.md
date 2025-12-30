@@ -3,6 +3,30 @@
 ## Introduction
 This file will provide a walk-through of our CF framework. The inputs are same for the CF-S and CF-MTR versions. 
 
+## Calling the function: 
+Keep the working directory (curr_dir) to the path containing the matlab scripts and R code.
+```R
+CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr)
+
+```
+|Columns|Description|
+   |---|---|
+   |curr_wd|working directory|
+   |xun|Gene to be perturbed|
+   |pe|percentage to binarize (default setting:0)|
+   |vgval|Glucose uptake rate|
+   |voval|Oxygen uptake rate|
+   |mi|Maximum iteration|
+   |u|index for gene|
+   |exch_rate|exchange rate for other reactions (default: empty)|
+   |ge|Gene expression data|
+   |gsl|GRN structure learning object (bn learn object) |
+   |gpl|GRN parameter learning object (bn learn object) |
+   |mgr|Metabolite to gene feedback information|
+   |gs|Gene subsystem information|
+   |fmr|List of exchange/sink reactions corresponding to the feedback metabolites|
+
+
 ## Inputs for the CF framework: 
 ### (A) To be changed in the ".R" scripts
 1) **Reconstructed GRN and the parameters learned from this GRN**
