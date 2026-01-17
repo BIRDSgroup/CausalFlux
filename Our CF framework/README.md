@@ -140,47 +140,5 @@ Inputs:
    
 2) Check line 1390 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
-## Instructions with respect to CF-MTR:
-### (A) Need to changed in the ".R" script
-
-1) Change lines 970, 977 to reflect the changes for A.1 and A.2 above
-   
-2) Change lines 1008 to reflect the changes for A.3 and A.4 above
-
-### (B) To be changed in the ".m" scripts
-
-#### CF_V2_Init_1_ID.m
-
-1) Change line 3 for current working directory where the codes/data for running the whole CF framework is stored
-   
-2) Change line 11 for metabolic model name
-
-3) Change line 100 and 101 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-
-4) Change line 96, 131 to index number corresponding to the biomass reaction in the metabolic model
-
-#### CF_V2_Iteration_2a_ID.m
-
-1) Change line 3 for current working directory where the codes/data for running the whole CF framework is stored
-
-2) Change line 12 for metabolic model name
-
-3) Change line 93 and 94 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-
-4) Change line 32, 51 to index number corresponding to the biomass reaction in the metabolic model
-
-#### CF_V2_Iteration_2d_ID.m
-
-1) Change line 8 for current working directory where the codes/data for running the whole CF framework is stored
-
-2)  Change line 15 for metabolic model name
-
-3)  Change line 26 and 27 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-   
-### (C) To be given as arguments to the CF function (in the ".R" script)
-
-1) Check line 1214 when the function is called for performing single gene KO
-   
-2) Check line 1216 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
 
