@@ -18,24 +18,23 @@ CF framework is distributed in the hope that it will be useful, but WITHOUT ANY 
 3. Application of CF framework on the real-world data (E. coli)
 
 ### Section 1: Our CF framework
-This section presents the code for the CF-S and CF-MTR frameworks, applicable to any generic case. It includes information on the datasets required and the function arguments. A detailed methodology is described in our paper.
+This section presents the code for the CF framework, applicable to any generic case. It includes information on the datasets required and the function arguments. A detailed methodology is described in our paper.
 
 ### Section 2: Application of CF framework on the toy models (TMs)
 This section provides the following information:
 1) Codes/data for simulating the steady-state fluxes and gene expression data in the three TMs for the WT/KO cases under all the exchange rates.
-2) Codes/data for running the CF-S/MTR, TRIMER, and GIMME approach on the TMs.
+2) Codes/data for running the CF, TRIMER, and GIMME approach on the TMs.
 3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material.
 
 ### Section 3: Application of CF framework on the real-world data (E. coli)
 This section provides the following information:
-1) Codes/data for running the CF-S/MTR tp perform single gene KOs in _E. coli_
+1) Codes/data for running the CF to perform single gene KOs in _E. coli_
 2) Codes/data to reconstruct/learn the parameters of the GRN (Gene Regularoty Network) for _E. coli_
-3) Codes/data for running the CF-S/MTR tp perform double gene KOs in _E. coli_
+3) Codes/data for running the CF to perform double gene KOs in _E. coli_
 4) Codes/data for generating the necessary table (Table 2 in the manuscript)
 
 ## Glossary
 - CF - Causal Flux (our methodology)
-- CF-S and CF-MTR - Variants of CF (CF-S is CF-Sink and CF-MTR is CF-Metabolite Turnover)
 - TM - Toy Model
 - GRN - Gene Regulatory Network
 - KO - Knock out
