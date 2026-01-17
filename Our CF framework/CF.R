@@ -1,5 +1,5 @@
 
-CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr){
+CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr){
   
   GRN_CS <- function(KO,sl, pl,g, op1){
     
@@ -142,11 +142,11 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
   
   
   
-  get_the_binary_data_iter <- function(df1, df2, df3, p, sl){
+  get_the_binary_data_iter <- function(df1, df2, df3, sl){
     bin_vec <- rep(0,times=nrow(df1))
     for(i in 1:nrow(df1)){
       for(j in 1:nrow(df2)){
-        if(df1[[5]][i]==df2[[1]][j] && round(df2[[3]][j])>p*df3[[3]][j]){
+        if(df1[[5]][i]==df2[[1]][j] && round(df2[[3]][j])>0){
           bin_vec[i]=1
         }
       }
@@ -854,7 +854,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
   
   ########### To check for stoping criteria
   
-  to_check_sink_rxn_iter <- function(fva_pre, fva_1, fva_2,fr,p){
+  to_check_sink_rxn_iter <- function(fva_pre, fva_1, fva_2,fr){
     
     sink_FVA_round_2 <- fva_2[[3]][fr] # change the sink reaction indices -- Corresponds to Toy_Model
     
@@ -867,7 +867,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
     
     if(p == 0){
       for(i in 1:length(sink_FVA_round_2)){
-        if(round(sink_FVA_round_2[i])> p*sink_FVA_round_1[i]){
+        if(round(sink_FVA_round_2[i])> 0){
           round_2_vec[i] = 1
         }else{
           round_2_vec[i] = 0
@@ -875,7 +875,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
       }
     }else{
       for(i in 1:length(sink_FVA_round_2)){
-        if(round(sink_FVA_round_2[i])> p*sink_FVA_round_1[i]){
+        if(round(sink_FVA_round_2[i])> 0){
           round_2_vec[i] = 1
         }else{
           round_2_vec[i] = 0
@@ -887,7 +887,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
     
     if(p == 0){
       for(i in 1:length(sink_FVA_round_1)){
-        if(round(sink_FVA_round_1[i])> p*sink_FVA_round_pre[i]){
+        if(round(sink_FVA_round_1[i])> 0){
           round_1_vec[i] = 1
         }else{
           round_1_vec[i] = 0
@@ -895,7 +895,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
       }
     }else{
       for(i in 1:length(sink_FVA_round_1)){
-        if(round(sink_FVA_round_1[i])> p*sink_FVA_round_pre[i]){
+        if(round(sink_FVA_round_1[i])> 0){
           round_1_vec[i] = 1
         }else{
           round_1_vec[i] = 0
@@ -921,10 +921,6 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
   library(tidyverse)
   
   #curr_wd <- c("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/")
-  
-  percen <- pe
-  
-  
   
   setwd(curr_wd)
   
@@ -1014,7 +1010,7 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
       FVA_i <- FVA_q
       
       
-      NEW_MGR <- get_the_binary_data_iter(met_gene_reg_data,FVA_i,FVA_XP, percen, grn_SL)
+      NEW_MGR <- get_the_binary_data_iter(met_gene_reg_data,FVA_i,FVA_XP, grn_SL)
       
       #write.csv(NEW_MGR$bin_data, paste0("Bin_",count,".csv"))
       
@@ -1085,8 +1081,8 @@ CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,
       write.csv(FBA_iplus1, paste0("FBA_incorp_P1_",count+1,".csv"))
       
       
-      iter_op <- to_check_sink_rxn_iter(FVA_XP,FVA_i, FVA_iplus1,FMR_, percen)
-      #iter_op <- to_check_sink_rxn_iter(FVA_XP,FVA_i, FBA_iplus1,2713,2778, percen)
+      iter_op <- to_check_sink_rxn_iter(FVA_XP,FVA_i, FVA_iplus1,FMR_)
+    
       count <- count + 1
       
       # step - 2e - break
