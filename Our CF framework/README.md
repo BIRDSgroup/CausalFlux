@@ -6,14 +6,13 @@ This file will provide a walk-through of our CF framework. The inputs are same f
 ## Calling the function: 
 Keep the working directory (curr_dir) to the path containing the matlab scripts and R code.
 ```R
-CF_function <- function(curr_wd,xun,pe,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr)
+CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr)
 
 ```
-|Columns|Description|
-   |---|---|
-   |curr_wd|working directory|
-   |xun|Gene to be perturbed|
-   |pe|percentage to binarize (default setting:0)|
+|Input arguments|Description|Notes|
+   |---|---|---|
+   |curr_wd|working directory|directory where ".R" and ".m" scripts are located |
+   |xun|Gene to be perturbed|Can provide one gene or a vector of genes in a for-loop for perturbation|
    |vgval|Glucose uptake rate|
    |voval|Oxygen uptake rate|
    |mi|Maximum iteration|
