@@ -9,34 +9,26 @@ Keep the working directory (curr_dir) to the path containing the matlab scripts 
 CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr)
 
 ```
-|Input arguments|Description|Notes|
-   |---|---|---|
-   |curr_wd|working directory|directory where ".R" and ".m" scripts are located |
-   |xun|Gene to be perturbed|Can provide one gene or a vector of genes in a for-loop for perturbation|
-   |vgval|Glucose uptake rate|
-   |voval|Oxygen uptake rate|
-   |mi|Maximum iteration|
-   |u|index for gene|
+|Input arguments|Description|
+   |---|---|
+   |curr_wd|Working directory (directory where ".R", ".m" and ".mat" (metabolic model) scripts are located) |
+   |xun|Gene (gene symbol) to be perturbed (can provide one gene or a vector of genes in a for-loop for perturbation)|
+   |vgval|Glucose uptake rate (in mmol/gDCW/hr)|
+   |voval|Oxygen uptake rate (in mmol/gDCW/hr)|
+   |mi|Maximum number of iterations|
+   |u|index for gene (1 for one gene or "i" index of the gene being perturbed if for-loop is used|
    |exch_rate|exchange rate for other reactions (default: empty)|
-   |ge|Gene expression data|
+   |ge|Binarized gene expression data (samples x genes)|
    |gsl|GRN structure learning object (bn learn object) |
    |gpl|GRN parameter learning object (bn learn object) |
-   |mgr|Metabolite to gene feedback information|
-   |gs|Gene subsystem information|
+   |mgr|Feedback from metabolites to genes|
+   |gs|Genes and Subsystems|
    |fmr|List of exchange/sink reactions corresponding to the feedback metabolites|
 
 
-## Inputs for the CF framework: 
-### (A) To be changed in the ".R" scripts
-1) **Reconstructed GRN and the parameters learned from this GRN**
-   
-   GRN reconstruction and parameter leazrning can be done independently, and should be stored in the folder **GRN_REQ_WO_BIGG**. The working directory of this folder must be set in the ".R" scripts for CF-S and CF-MTR.
-   The "bn" objects corresponding to these data can be stored as RDS data.
-2) **Binarized gene expression data**
-   
-   The binarized gene expression data used to reconstruct/learn the parameters of the GRN. This should also be in the folder **GRN_REQ_WO_BIGG**. The working directory of this folder must be set in the ".R" scripts for CF-S 
-   and CF-MTR
-3) **Feedback from metabolites to genes**
+
+### Formart for specific input arguments
+1) **Feedback from metabolites to genes**
    
    The data for this information should of the following format. The columns (column names) must be:
    |Columns|Description|
@@ -46,10 +38,8 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
    |TF-gene|Gene symbol of TF targeted by metabolites|
    |Interaction|Interaction of metabolite on TF (+ve or -ve regulation)|
    |sink_met_symbol|Sink reactions names|
-
-   This data (as RDS data) should be stored in the folder **MM_REQ**. The working directory of this folder must be set in the ".R" scripts for CF-S and CF-MTR.
    
-4) **Genes and Subsystems**
+2) **Genes and Subsystems**
 
     This data should contain:
    |Columns|Description|
@@ -57,45 +47,11 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
    |Gene| Bigg ids of genes from the metabolic model|
    |Subsystem|Subsystem in which the gene is present|
    |gene_name|Gene symbol |
-
-   This data (as RDS data) should be stored in the folder **MM_REQ**. The working directory of this folder must be set in the ".R" scripts for CF-S and CF-MTR.
    
-### (B) To be changed in the ".m" scripts
-1)  **Metabolic model**
+3)  **Metabolic model**
 
-    Metabolic model corresponding to the system being studied. In CF-S, add sink reactions (extra reactions added to metabolic model) for the metabolites that have feedback to the genes in GRN. In the case of CF-MTR, keep the metabolic model as such (without sink reactions). Make sure to load the correct metabolic models in all the three ".m" scripts.
+    Metabolic model corresponding to the system being studied. If all metabolites in the **mgr** data are already represented as exchange reactions in the current model, no changes are required. Otherwise, sink reactions should be added for the feedback metabolites.
 
-### (C) To be given as arguments to the CF function
-
-This "CF_function" (see below) is called as "CF_S_Func" in the case of CF-S and "CF_MTR_Func" in the case of CF-MTR. Nevertheless, the inputs to these functions are still the same.
-```R
-CF_function(curr_wd, xun, pe, vgval, voval, mi, u)
-```
-Inputs: 
-
-(a) curr_wd: working directory where all the ".R", ".m", ".mat" (metabolic model) and other folders like "GRN_REQ_WO_BIGG", "MM_REQ" are present. This is also where the results will be stored
-
-(b) xun: Gene (gene symbol) to be perturbed/knocked out
-
-(c) pe: Binarization percentage
-
-(d) vgval: Glucose uptake value (in mmol/gDCW/hr)
-
-(e) voval: Oxygen uptake value (in mmol/gDCW/hr)
-
-(f) mi: Maximum number of iterations
-
-(g) u: It corresponds to the index of the gene being perturbed. 
-
-
-## Instructions with respect to CF-S:
-### (A) Need to changed in the ".R" script
-
-1) Change lines 1148, 1155 to reflect the changes for A.1 and A.2 above
-   
-2) Change lines 1176 to reflect the changes for A.3 and A.4 above
-
-3) Change line 1318 to set the start and end indices of the sink reactions added to the model. This is input to the "to_check_sink_rxn_iter" function.
 
 ### (B) To be changed in the ".m" scripts
 
