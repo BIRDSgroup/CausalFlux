@@ -1,7 +1,7 @@
 # A walk-through of our CF framework
 
 ## Introduction
-This file will provide a walk-through of our CF framework. The inputs are same for the CF-S and CF-MTR versions. 
+This file will provide a walk-through of our CF framework
 
 ## Calling the function: 
 Keep the working directory (curr_dir) to the path containing the matlab scripts and R code.
