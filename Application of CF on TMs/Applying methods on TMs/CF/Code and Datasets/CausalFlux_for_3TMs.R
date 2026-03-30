@@ -93,16 +93,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
           
         }
         
-        
-        # bo_p_modified[-keep_ind] <- pl[-keep_ind]
-        # 
-        # # Modify the content at the unchanged index
-        # #bo_p_modified$A <- as.table(cptA)
-        # 
-        # so <- paste("bo_p_modified$",KO," <- as.table(cptA)", sep = "")  
-        # 
-        # eval(parse(text = so))
-        # 
         yu <- list(bo_s,bo_p_modified)
         names(yu) <- c("CS_SL", "CS_PL")
       }else{
@@ -163,12 +153,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
     return(df1)}
   
   
-  # df1 <- met_gene_reg_data
-  # df2 <- FVA_i
-  # df3 <- FVA_XP
-  # p <- percen
-  # sl <- grn_SL
-  
   get_the_binary_data_iter <- function(df1, df2, df3, p, sl){
     bin_vec <- rep(0,times=nrow(df1))
     for(i in 1:nrow(df1)){
@@ -200,11 +184,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
   ######################################################## This section is divided into two functions 
   
   ### Function 1 - to output the functional TF regulation
-  
-  # df_1 <- NEW_MGR
-  # bn_obj <- grn_SL
-  # GS <- gene_subsys
-  # KO <- xu_n[j]
   
   Integration_part_1 <- function(df_1, bn_obj, GS, KO){
     all <- df_1[[6]]
@@ -262,17 +241,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
           }
         }
         
-        # more_1_gene <- c()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene <- c(more_1_gene,names(UNI_TF_name_ids[x_id[i]]))
-        # }
-        
-        # more_1_gene_int <- list()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene_int[[i]] <- df_1[[4]][UNI_TF_name_ids[[x_id[i]]]]
-        # }
-        
-        # names(more_1_gene_int) <- more_1_gene
         
         # to get a df with only 1 rep of regulation
         only_1_idx <- c()
@@ -531,18 +499,7 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       FBA_incorp <- read_csv("FBA_to_check.csv", col_names = FALSE)
       write.csv(FBA_incorp, paste0("FBA_incorp_",ct,".csv"))
-      
-      # FVA_P <- FVA_incorp
-      # #FVA_P <- FBA_incorp
-      # 
-      # FVA_prev <- FVA_III 
-      # 
-      
-      # KO_gene = "gnd"
-      # stra = grn_SL
-      # para = grn_PL
-      # g <- gge
-      # 
+     
       
       
     }else{
@@ -577,29 +534,8 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       gene_cp_gg_df <- data.frame(tg_g,all_tgs_eval_bde)
       colnames(gene_cp_gg_df) <- c("MET_MODEL_TG_genes","Probability")
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if(gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # gene_cp_gg_df[,ncol(gene_cp_gg_df)+1] <- bid
-      # colnames(gene_cp_gg_df)[ncol(gene_cp_gg_df)] <- "Bigg_symb"
-      # 
       bid <- c() 
       
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if((gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]) == TRUE){
-      #       #bid <- c(bid, GS$Gene[j])
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
       b <- match(gene_cp_gg_df$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -725,27 +661,10 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l, stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
+      
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+      
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -760,38 +679,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
     }else{
       
-      # get_the_evi_list <- function(op_lis){
-      #   
-      #   op_df_1 <- op_lis[[1]]
-      #   op_df_2 <- op_lis[[2]]
-      #   
-      #   req_var <- unique(as.character(op_df_1[[1]]))
-      #   extra_var <- op_df_2[[1]]
-      #   
-      #   needed_var <- intersect(req_var,extra_var)
-      #   
-      #   symb_vec <- list()
-      #   for(j in 1:length(needed_var)){
-      #     symb_vec[j] <- paste("1")
-      #     
-      #   }
-      #   names(symb_vec) <- needed_var
-      #   
-      #   return(symb_vec)}
-      # 
-      # 
-      # e_l <- get_the_evi_list(op_lis_int_1)
-      # 
-      # 
-      # if(length(KO_gene)==0){
-      #   e_l <- e_l
-      # } else if(KO_gene %in% names(e_l)){
-      #   x <- which(names(e_l) %in% KO_gene)
-      #   e_l[[x]] <- "0"
-      # }else {
-      #   e_l <- append(e_l,"0")
-      #   names(e_l)[length(e_l)] <- KO_gene
-      # }
       
       e_l <- list()
       e_l <- "0"
@@ -849,27 +736,9 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l,stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+    
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -983,30 +852,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       }
     }
     
-    
-    
-    # 
-    # for(i in 1:length(sink_FVA_round_2)){
-    #   if(sink_FVA_round_2[i]> p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 1
-    #   }else if(sink_FVA_round_2[i]< p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 0
-    #   }
-    # }
-    
-    
-    # Maximum fluxes for the sink reactions from round 2 of FVA
-    
-    # sink_FVA_round_1 <- fva_1[[3]][r_begin:r_end] # change the sink reaction indices -- Corresponds to Toy_Model
-    # 
-    # round_1_vec <- c()
-    # for(i in 1:length(sink_FVA_round_1)){
-    #   if(sink_FVA_round_1[i]>0){
-    #     round_1_vec[i] = 1
-    #   }else if(sink_FVA_round_1[i]<0){
-    #     round_1_vec[i] = 0
-    #   }
-    # }
     
     x_status <- identical(round_1_vec, round_2_vec)
     
@@ -1305,11 +1150,6 @@ TM1_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
 
 TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
   
-  # KO <- xu_n[j]
-  # sl <- grn_SL
-  # pl <- grn_PL
-  # g <- gge
-  # op1 <- op_intg_1
   
   GRN_CS <- function(KO,sl, pl,g, op1){
     
@@ -1399,15 +1239,6 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
         }
         
         
-        # bo_p_modified[-keep_ind] <- pl[-keep_ind]
-        # 
-        # # Modify the content at the unchanged index
-        # #bo_p_modified$A <- as.table(cptA)
-        # 
-        # so <- paste("bo_p_modified$",KO," <- as.table(cptA)", sep = "")  
-        # 
-        # eval(parse(text = so))
-        # 
         yu <- list(bo_s,bo_p_modified)
         names(yu) <- c("CS_SL", "CS_PL")
       }else{
@@ -1503,13 +1334,6 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
   
   ######################################################## This section is divided into two functions 
   
-  ### Function 1 - to output the functional TF regulation
-  
-  # df_1 <- NEW_MGR
-  # bn_obj <- grn_SL
-  # GS <- gene_subsys
-  # KO <- xu_n[j]
-  
   Integration_part_1 <- function(df_1, bn_obj, GS, KO){
     all <- df_1[[6]]
     
@@ -1566,17 +1390,6 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
           }
         }
         
-        # more_1_gene <- c()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene <- c(more_1_gene,names(UNI_TF_name_ids[x_id[i]]))
-        # }
-        
-        # more_1_gene_int <- list()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene_int[[i]] <- df_1[[4]][UNI_TF_name_ids[[x_id[i]]]]
-        # }
-        
-        # names(more_1_gene_int) <- more_1_gene
         
         # to get a df with only 1 rep of regulation
         only_1_idx <- c()
@@ -1835,18 +1648,7 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       FBA_incorp <- read_csv("FBA_to_check.csv", col_names = FALSE)
       write.csv(FBA_incorp, paste0("FBA_incorp_",ct,".csv"))
-      
-      # FVA_P <- FVA_incorp
-      # #FVA_P <- FBA_incorp
-      # 
-      # FVA_prev <- FVA_III 
-      # 
-      
-      # KO_gene = "gnd"
-      # stra = grn_SL
-      # para = grn_PL
-      # g <- gge
-      # 
+     
       
       
     }else{
@@ -1884,29 +1686,10 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       gene_cp_gg_df <- data.frame(tg_g,all_tgs_eval_bde)
       colnames(gene_cp_gg_df) <- c("MET_MODEL_TG_genes","Probability")
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if(gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # gene_cp_gg_df[,ncol(gene_cp_gg_df)+1] <- bid
-      # colnames(gene_cp_gg_df)[ncol(gene_cp_gg_df)] <- "Bigg_symb"
-      # 
+     
       bid <- c() 
       
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if((gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]) == TRUE){
-      #       #bid <- c(bid, GS$Gene[j])
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+      
       b <- match(gene_cp_gg_df$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -2031,27 +1814,10 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l, stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
+     
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+      
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -2066,38 +1832,6 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
     }else{
       
-      # get_the_evi_list <- function(op_lis){
-      #   
-      #   op_df_1 <- op_lis[[1]]
-      #   op_df_2 <- op_lis[[2]]
-      #   
-      #   req_var <- unique(as.character(op_df_1[[1]]))
-      #   extra_var <- op_df_2[[1]]
-      #   
-      #   needed_var <- intersect(req_var,extra_var)
-      #   
-      #   symb_vec <- list()
-      #   for(j in 1:length(needed_var)){
-      #     symb_vec[j] <- paste("1")
-      #     
-      #   }
-      #   names(symb_vec) <- needed_var
-      #   
-      #   return(symb_vec)}
-      # 
-      # 
-      # e_l <- get_the_evi_list(op_lis_int_1)
-      # 
-      # 
-      # if(length(KO_gene)==0){
-      #   e_l <- e_l
-      # } else if(KO_gene %in% names(e_l)){
-      #   x <- which(names(e_l) %in% KO_gene)
-      #   e_l[[x]] <- "0"
-      # }else {
-      #   e_l <- append(e_l,"0")
-      #   names(e_l)[length(e_l)] <- KO_gene
-      # }
       
       e_l <- list()
       e_l <- "0"
@@ -2156,27 +1890,9 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l,stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
+      
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -2289,30 +2005,6 @@ TM2_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       }
     }
     
-    
-    
-    # 
-    # for(i in 1:length(sink_FVA_round_2)){
-    #   if(sink_FVA_round_2[i]> p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 1
-    #   }else if(sink_FVA_round_2[i]< p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 0
-    #   }
-    # }
-    
-    
-    # Maximum fluxes for the sink reactions from round 2 of FVA
-    
-    # sink_FVA_round_1 <- fva_1[[3]][r_begin:r_end] # change the sink reaction indices -- Corresponds to Toy_Model
-    # 
-    # round_1_vec <- c()
-    # for(i in 1:length(sink_FVA_round_1)){
-    #   if(sink_FVA_round_1[i]>0){
-    #     round_1_vec[i] = 1
-    #   }else if(sink_FVA_round_1[i]<0){
-    #     round_1_vec[i] = 0
-    #   }
-    # }
     
     x_status <- identical(round_1_vec, round_2_vec)
     
@@ -2654,9 +2346,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       
       
-      #bo <- paste0("mutilated(sl, evidence = list(",noquote(paste(KO)),"= 0))")
-      
-      #bo_s <- eval(parse(text = bo))
       bo_s <- mutilated(sl,evidence = bh)
       
       bo_p <- bn.fit(bo_s, g, method = "bayes")
@@ -2701,15 +2390,7 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
         }
         
         
-        # bo_p_modified[-keep_ind] <- pl[-keep_ind]
-        # 
-        # # Modify the content at the unchanged index
-        # #bo_p_modified$A <- as.table(cptA)
-        # 
-        # so <- paste("bo_p_modified$",KO," <- as.table(cptA)", sep = "")  
-        # 
-        # eval(parse(text = so))
-        # 
+        
         yu <- list(bo_s,bo_p_modified)
         names(yu) <- c("CS_SL", "CS_PL")
       }else{
@@ -2768,12 +2449,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
     
     return(df1)}
   
-  # get_the_binary_data_iter(met_gene_reg_data,FVA_i,FVA_XP, percen, grn_SL)
-  # df1 <- met_gene_reg_data
-  # df2 <- FVA_i
-  # df3 <- FVA_XP
-  # p <- percen
-  # sl <- grn_SL
   
   get_the_binary_data_iter <- function(df1, df2, df3, p, sl){
     bin_vec <- rep(0,times=nrow(df1))
@@ -2804,13 +2479,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
   ####################################### Step - 2c  Integration into GRN  ####################################### 
   
   ######################################################## This section is divided into two functions 
-  
-  ### Function 1 - to output the functional TF regulation
-  
-  # df_1 <- NEW_MGR
-  # bn_obj <- grn_SL
-  # GS <- gene_subsys
-  # KO <- xu_n[j]
   
   Integration_part_1 <- function(df_1, bn_obj, GS, KO){
     all <- df_1[[6]]
@@ -2868,17 +2536,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
           }
         }
         
-        # more_1_gene <- c()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene <- c(more_1_gene,names(UNI_TF_name_ids[x_id[i]]))
-        # }
-        
-        # more_1_gene_int <- list()
-        # for(i in 1:length(x_id)){
-        #   more_1_gene_int[[i]] <- df_1[[4]][UNI_TF_name_ids[[x_id[i]]]]
-        # }
-        
-        # names(more_1_gene_int) <- more_1_gene
         
         # to get a df with only 1 rep of regulation
         only_1_idx <- c()
@@ -3140,17 +2797,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       FBA_incorp <- read_csv("FBA_to_check.csv", col_names = FALSE)
       write.csv(FBA_incorp, paste0("FBA_incorp_",ct,".csv"))
       
-      # FVA_P <- FVA_incorp
-      # #FVA_P <- FBA_incorp
-      # 
-      # FVA_prev <- FVA_III 
-      # 
-      
-      # KO_gene = "gnd"
-      # stra = grn_SL
-      # para = grn_PL
-      # g <- gge
-      # 
       
       
     }else{
@@ -3188,29 +2834,10 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       gene_cp_gg_df <- data.frame(tg_g,all_tgs_eval_bde)
       colnames(gene_cp_gg_df) <- c("MET_MODEL_TG_genes","Probability")
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if(gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # gene_cp_gg_df[,ncol(gene_cp_gg_df)+1] <- bid
-      # colnames(gene_cp_gg_df)[ncol(gene_cp_gg_df)] <- "Bigg_symb"
-      # 
+      
       bid <- c() 
       
-      # for(i in 1:nrow(gene_cp_gg_df)){
-      #   for(j in 1:nrow(GS)){
-      #     if((gene_cp_gg_df$MET_MODEL_TG_genes[i]==GS$gene_name[j]) == TRUE){
-      #       #bid <- c(bid, GS$Gene[j])
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+      
       b <- match(gene_cp_gg_df$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -3270,8 +2897,7 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
     }
     return(FVA_incorp)}
   
-  #Integration_part_2(op_intg_1, KO_gene = xu_n[j], gene_subsys, xcspl, grn_SL)
-  
+
   Integration_part_2 <- function(op_lis_int_1, KO_gene, GS,para, strat){
     
     if(KO_gene == "WT" & length(op_lis_int_1)==0){
@@ -3335,27 +2961,9 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l, stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
+
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -3370,38 +2978,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
     }else{
       
-      # get_the_evi_list <- function(op_lis){
-      #   
-      #   op_df_1 <- op_lis[[1]]
-      #   op_df_2 <- op_lis[[2]]
-      #   
-      #   req_var <- unique(as.character(op_df_1[[1]]))
-      #   extra_var <- op_df_2[[1]]
-      #   
-      #   needed_var <- intersect(req_var,extra_var)
-      #   
-      #   symb_vec <- list()
-      #   for(j in 1:length(needed_var)){
-      #     symb_vec[j] <- paste("1")
-      #     
-      #   }
-      #   names(symb_vec) <- needed_var
-      #   
-      #   return(symb_vec)}
-      # 
-      # 
-      # e_l <- get_the_evi_list(op_lis_int_1)
-      # 
-      # 
-      # if(length(KO_gene)==0){
-      #   e_l <- e_l
-      # } else if(KO_gene %in% names(e_l)){
-      #   x <- which(names(e_l) %in% KO_gene)
-      #   e_l[[x]] <- "0"
-      # }else {
-      #   e_l <- append(e_l,"0")
-      #   names(e_l)[length(e_l)] <- KO_gene
-      # }
       
       e_l <- list()
       e_l <- "0"
@@ -3458,27 +3034,9 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
       
       CP_DF_MET_MODEL <- CP_cal_func(op_lis_int_1, e_l,stra = strat)
       
-      # bid <- c() 
-      # 
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if(CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j]){
-      #       bid <- c(bid, GS$Gene[j])
-      #     }
-      #   }
-      # }
-      # 
-      # CP_DF_MET_MODEL[,ncol(CP_DF_MET_MODEL)+1] <- bid
-      # colnames(CP_DF_MET_MODEL)[ncol(CP_DF_MET_MODEL)] <- "Bigg_symb"
       bid <- c() 
       
-      # for(i in 1:nrow(CP_DF_MET_MODEL)){
-      #   for(j in 1:nrow(GS)){
-      #     if((CP_DF_MET_MODEL$MET_MODEL_TG_genes[i]==GS$gene_name[j])==TRUE){
-      #       bid[i] <- GS$Gene[j]
-      #     }
-      #   }
-      # }
+      
       b <- match(CP_DF_MET_MODEL$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -3594,29 +3152,6 @@ TM3_Single_KO_CF_S <- function(curr_wd,pe,mi, xun){
     }
     
     
-    
-    # 
-    # for(i in 1:length(sink_FVA_round_2)){
-    #   if(sink_FVA_round_2[i]> p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 1
-    #   }else if(sink_FVA_round_2[i]< p*sink_FVA_round_1[i]){
-    #     round_2_vec[i] = 0
-    #   }
-    # }
-    
-    
-    # Maximum fluxes for the sink reactions from round 2 of FVA
-    
-    # sink_FVA_round_1 <- fva_1[[3]][r_begin:r_end] # change the sink reaction indices -- Corresponds to Toy_Model
-    # 
-    # round_1_vec <- c()
-    # for(i in 1:length(sink_FVA_round_1)){
-    #   if(sink_FVA_round_1[i]>0){
-    #     round_1_vec[i] = 1
-    #   }else if(sink_FVA_round_1[i]<0){
-    #     round_1_vec[i] = 0
-    #   }
-    # }
     
     x_status <- identical(round_1_vec, round_2_vec)
     
@@ -3964,17 +3499,6 @@ for(i in 1:length(ee)){
   
   library(matrixStats)
   library(Metrics)
-  
-  
-  # avg_std_func_ode_simu <- function(df){
-  #   
-  #   avg_s <- colMeans(df)
-  #   std_s <- colSds(as.matrix(df))
-  #   
-  #   as_df <- data.frame(avg_s,std_s)
-  #   colnames(as_df) <- c("Average","SD")
-  #   
-  #   return(as_df)}
   
   
   Med_mad_func_ode_simu <- function(df){
@@ -4636,10 +4160,7 @@ for(i in 1:length(ee)){
   exch_rate <- ee[i]
   TM = "TM_2"
   
-  
   # WT
-  #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/TOY_M_3/New/Full_method/based_on_new_GE_data/",exch_rate,"/WT/"))
-  #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/TM2/",exch_rate,"/WT/"))
   setwd(paste0(curr_wd,"KO_data_TM2_",exch_rate,"/WT/"))
   
   
@@ -5035,18 +4556,6 @@ for(i in 1:length(ee)){
   library(matrixStats)
   library(Metrics)
   
-  
-  # avg_std_func_ode_simu <- function(df){
-  #   
-  #   avg_s <- colMeans(df)
-  #   std_s <- colSds(as.matrix(df))
-  #   
-  #   as_df <- data.frame(avg_s,std_s)
-  #   colnames(as_df) <- c("Average","SD")
-  #   
-  #   return(as_df)}
-  
-  
   Med_mad_func_ode_simu <- function(df){
     
     avg_s <- colMedians(as.matrix(df))
@@ -5098,11 +4607,6 @@ for(i in 1:length(ee)){
   exch_rate <- ee[i]
   TM = "TM_3"
   
-  
-  # WT
-  #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/TOY_M_4/V3/new/Full_method/based_on_new_GE_data/",exch_rate,"/WT/"))
-  #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/TM3/",exch_rate,"/WT/"))
-  #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_S/CF_S_TM3/KO_data_TM3_",exch_rate,"/WT/"))
   setwd(paste0(curr_wd,"KO_data_TM3_",exch_rate,"/WT/"))
   
   y <- read.csv("FBA_to_check.csv", header = F)
@@ -5207,9 +4711,7 @@ for(i in 1:length(ee)){
   
   
   swd <- paste0(curr_wd,"ODE_simu/TM3/",exch_rate,"/")
-  
-  #swd <- paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/TOY_M_4/V3/new/ODE_simu/",exch_rate,"/")
-  ##### 10000 exchange
+    ##### 10000 exchange
   library(dplyr)
   
   ODE_simu_WT <- Get_ode_simu_SS1(swd,"WT")
@@ -5477,20 +4979,17 @@ act_vs_pred_sep_plots_tm1 <- function(ec,g, somed){
   
   if(ec == 3.2){
     setwd(paste0(curr_wd,"TM1/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_1.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd(paste0(curr_wd,"TM1/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_1.csv", header = TRUE)
     
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd(paste0(curr_wd,"TM1/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM1")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_1.csv", header = TRUE)
     
     ### 3.2
@@ -5500,10 +4999,7 @@ act_vs_pred_sep_plots_tm1 <- function(ec,g, somed){
   d1 <- d1[d1$Settings == g,]
   
   x1 <- c("Actual_all","CF_S_FBA_all","CF_S_FVA_min_all","CF_S_FVA_max_all","TRIMER_all","GIMME_FBA_all","GIMME_FVA_min_all", "GIMME_FVA_max_all" )
-  #x2 <- c("Actual","CF-S (FBA)","CF-S (FVA min)","CF-S (FVA max)", "TRIMER","GIMME (FBA)","GIMME (FVA min)","GIMME (FVA max)","CF-MTR (FBA)","CF-MTR (FVA min)","CF-MTR (FVA max)")
   
-  #x <- data.frame(x1,x2)
-  #si <- which(colnames(d1) %in% x[,1])
   si <- which(colnames(d1) %in% x1)
   
   for(i in 1:length(si)){
@@ -5513,8 +5009,6 @@ act_vs_pred_sep_plots_tm1 <- function(ec,g, somed){
   
   
   library(ff)
-  
-  #somed <- "D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Results/Sep_act_vs_pred_plot/"
   
   dir.create(paste0(somed,"/Sep_act_vs_pred_plot"))
   dir.create(paste0(somed,"/Sep_act_vs_pred_plot","/TM1"))
@@ -5553,24 +5047,11 @@ act_vs_pred_sep_plots_tm1 <- function(ec,g, somed){
   ggplot(d1, aes(Actual_all, GIMME_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (GIMME (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
   ggsave("GIMME_FVA_MAX.pdf")
   ggsave("GIMME_FVA_MAX.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FBA_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FBA))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FBA.pdf")
-  # ggsave("CF_MTR_FBA.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_min_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA min))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MIN.pdf")
-  # ggsave("CF_MTR_FVA_MIN.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MAX.pdf")
-  # ggsave("CF_MTR_FVA_MAX.jpeg")
-  
-  
   
 }
 
 
 ############################################# 3.2
-#sd <- "D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Results/Sep_act_vs_pred_plot/"
-
 sd <- curr_wd
 
 
@@ -5610,19 +5091,16 @@ act_vs_pred_sep_plots_tm2 <- function(ec,g, somed){
   
   if(ec == 3.2){
     setwd(paste0(curr_wd,"TM2/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_2.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd(paste0(curr_wd,"TM2/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_2.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd(paste0(curr_wd,"TM2/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM2/")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_2.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
@@ -5631,10 +5109,7 @@ act_vs_pred_sep_plots_tm2 <- function(ec,g, somed){
   d1 <- d1[d1$Settings == g,]
   
   x1 <- c("Actual_all","CF_S_FBA_all","CF_S_FVA_min_all","CF_S_FVA_max_all","TRIMER_all","GIMME_FBA_all","GIMME_FVA_min_all", "GIMME_FVA_max_all" )
-  #x2 <- c("Actual","CF-S (FBA)","CF-S (FVA min)","CF-S (FVA max)", "TRIMER","GIMME (FBA)","GIMME (FVA min)","GIMME (FVA max)","CF-MTR (FBA)","CF-MTR (FVA min)","CF-MTR (FVA max)")
   
-  #x <- data.frame(x1,x2)
-  #si <- which(colnames(d1) %in% x[,1])
   si <- which(colnames(d1) %in% x1)
   
   for(i in 1:length(si)){
@@ -5684,17 +5159,6 @@ act_vs_pred_sep_plots_tm2 <- function(ec,g, somed){
   ggplot(d1, aes(Actual_all, GIMME_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (GIMME (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
   ggsave("GIMME_FVA_MAX.pdf")
   ggsave("GIMME_FVA_MAX.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FBA_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FBA))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FBA.pdf")
-  # ggsave("CF_MTR_FBA.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_min_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA min))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MIN.pdf")
-  # ggsave("CF_MTR_FVA_MIN.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MAX.pdf")
-  # ggsave("CF_MTR_FVA_MAX.jpeg")
-  # 
-  
   
 }
 
@@ -5739,19 +5203,16 @@ act_vs_pred_sep_plots_tm3 <- function(ec,g, somed){
   
   if(ec == 3.2){
     setwd(paste0(curr_wd,"TM3/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_3.2_TM_3.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 320){
     setwd(paste0(curr_wd,"TM3/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_320_TM_3.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
   }else if(ec == 3200){
     setwd(paste0(curr_wd,"TM3/"))
-    #setwd("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/CF_Trial/TM3/")
     act_3.2 <- read.csv("Actual_Pred_data_3200_TM_3.csv", header = TRUE)
     ### 3.2
     d1 <- act_3.2
@@ -5760,10 +5221,7 @@ act_vs_pred_sep_plots_tm3 <- function(ec,g, somed){
   d1 <- d1[d1$Settings == g,]
   
   x1 <- c("Actual_all","CF_S_FBA_all","CF_S_FVA_min_all","CF_S_FVA_max_all","TRIMER_all","GIMME_FBA_all","GIMME_FVA_min_all", "GIMME_FVA_max_all" )
-  #x2 <- c("Actual","CF-S (FBA)","CF-S (FVA min)","CF-S (FVA max)", "TRIMER","GIMME (FBA)","GIMME (FVA min)","GIMME (FVA max)","CF-MTR (FBA)","CF-MTR (FVA min)","CF-MTR (FVA max)")
   
-  #x <- data.frame(x1,x2)
-  #si <- which(colnames(d1) %in% x[,1])
   si <- which(colnames(d1) %in% x1)
   
   for(i in 1:length(si)){
@@ -5773,8 +5231,6 @@ act_vs_pred_sep_plots_tm3 <- function(ec,g, somed){
   
   
   library(ff)
-  
-  #somed <- "D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/CF_pipeline_TMs/CF_MTR/Results_1/Sep_act_vs_pred_plot/"
   
   dir.create(paste0(somed,"/Sep_act_vs_pred_plot"))
   dir.create(paste0(somed,"/Sep_act_vs_pred_plot","/TM3"))
@@ -5813,16 +5269,6 @@ act_vs_pred_sep_plots_tm3 <- function(ec,g, somed){
   ggplot(d1, aes(Actual_all, GIMME_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (GIMME (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
   ggsave("GIMME_FVA_MAX.pdf")
   ggsave("GIMME_FVA_MAX.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FBA_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FBA))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FBA.pdf")
-  # ggsave("CF_MTR_FBA.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_min_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA min))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MIN.pdf")
-  # ggsave("CF_MTR_FVA_MIN.jpeg")
-  # ggplot(d1, aes(Actual_all, CF_M_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA max))")+geom_smooth(method = "lm")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Exchange rate set at ", EO," for the ODE simulations and ", EM, " for \nthe Method under ",COND," condition in ",TM , " (Normalised actual vs predicted)"))+theme_bw()
-  # ggsave("CF_MTR_FVA_MAX.pdf")
-  # ggsave("CF_MTR_FVA_MAX.jpeg")
-  
   
   
 }
@@ -5857,10 +5303,6 @@ act_vs_pred_sep_plots_tm3(3200,"A KO",sd)
 
 
 cor_dat_df <- function(df1, kv, ex){
-  
-  # df1$CFMTR_FBA <- df2[[1]]
-  # df1$CFMTR_FVA_min <- df2[[2]]
-  # df1$CFMTR_FVA_max <- df2[[3]]
   
   x1 <- c("Actual_all","CF_S_FBA_all","CF_S_FVA_min_all","CF_S_FVA_max_all","TRIMER_all","GIMME_FBA_all","GIMME_FVA_min_all", "GIMME_FVA_max_all" )
   si <- which(colnames(df1) %in% x1)
@@ -6016,14 +5458,6 @@ ggsave("GIMME_FVA_min_vs_GIMME_FVA_MAX.pdf")
 ggsave("GIMME_FVA_min_vs_GIMME_FVA_MAX.jpeg")
 
 
-# ggplot(SC_TMS_df, aes(x = CF_M_FBA_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for CF-MTR (FBA) and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-# ggsave("CF_MTR_FBA_vs_CF_MTR_FVA_MAX.pdf")
-# ggsave("CF_MTR_FBA_vs_CF_MTR_FVA_MAX.jpeg")
-# 
-# ggplot(SC_TMS_df, aes(x = CF_M_FVA_min_all, y = CF_M_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for CF-MTR (FVA min) and Actual")+ylab("Spearman correlation (SC) for CF-MTR (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
-# ggsave("CF_MTR_FVA_MIN_vs_CF_MTR_FVA_MAX.pdf")
-# ggsave("CF_MTR_FVA_MIN_vs_CF_MTR_FVA_MAX.jpeg")
-
 ########################## COMPARING CF-S WITH OTHER METHODS
 
 ggplot(SC_TMS_df, aes(x = TRIMER_all, y = CF_S_FVA_max_all))+geom_abline()+xlab("Spearman correlation (SC) for TRIMER and Actual")+ylab("Spearman correlation (SC) for CF-S (FVA max) and Actual")+ggtitle("Comapring the SC (between methods and actual) across \nall the toy models and conditions")+scale_color_manual(values=c('purple','aquamarine3', 'darkgoldenrod1'))+labs(color = "Toy Models (TM)")+theme_bw()+theme(legend.position = "bottom", legend.direction  = "horizontal")+geom_jitter(aes(color = TMS),width = 0.05, height = 0.05, alpha= 1, size = 2)+xlim(-0.5,1.0)+ylim(-0.5,1.0)
@@ -6060,13 +5494,9 @@ all_tms_ex <- function(e){
   
   for(i in 1:length(t)){
     setwd(paste0(curr_wd,"/TM",t[i],"/"))
-    
-    #setwd(paste0("D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/Final_simulation_results/TM",t[i],"_25_75_per/"))
-    
     act_3.2 <- read.csv(paste0("Actual_Pred_data_",e,"_TM_",t[i],".csv"), header = TRUE)
     
     tm <- paste0("TM",t[i])
-    #p <- "Per_0"
     ex <- e
     
     if(t[i] == 2){
@@ -6076,14 +5506,6 @@ all_tms_ex <- function(e){
     }else if(t[i] == 3){
       kv <- c("WT","A","X")
     }
-    
-    
-    
-    # cfmtr_tm1_3.2_per0 <- get_overall_df(tm,ex,kv)
-    # 
-    # act_3.2$CFMTR_FBA <- cfmtr_tm1_3.2_per0[[1]]
-    # act_3.2$CFMTR_FVA_min <- cfmtr_tm1_3.2_per0[[2]]
-    # act_3.2$CFMTR_FVA_max <- cfmtr_tm1_3.2_per0[[3]]
     
     d1 <- act_3.2
     di <- rbind(di,d1)
@@ -6133,10 +5555,6 @@ setwd(paste0(somed,"/BM_ACT_VS_PRED/"))
 ggplot(TMS_EXC_ALL_, aes(Actual_all, CF_S_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-S (FVA max))")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Normalised actual vs predicted for Biomass reactions \nacross KO cases in various TMS under different exchange rate"))+theme_bw()+ylim(0,1.15)+geom_smooth(method = "lm")
 ggsave("CF_S_FVA_MAX.pdf")
 ggsave("CF_S_FVA_MAX.jpeg")
-
-# ggplot(TMS_EXC_ALL_, aes(Actual_all, CF_M_FVA_max_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (CF-MTR (FVA max))")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Normalised actual vs predicted for Biomass reactions \nacross KO cases in various TMS under different exchange rate"))+theme_bw()+ylim(0,1.15)+geom_smooth(method = "lm")
-# ggsave("CF_MTR_FVA_MAX.pdf")
-# ggsave("CF_MTR_FVA_MAX.jpeg")
 
 ggplot(TMS_EXC_ALL_, aes(Actual_all, TRIMER_all))+geom_point()+xlab("Actual (Median of ODE simulation)")+ylab("Predicted (TRIMER)")+stat_cor(method = "spearman", size = 5)+ggtitle(paste0("Normalised actual vs predicted for Biomass reactions \nacross KO cases in various TMS under different exchange rate"))+theme_bw()+ylim(0,1.15)+geom_smooth(method = "lm")
 ggsave("TRIMER.pdf")
