@@ -1,16 +1,9 @@
-% matlab function - step 2d  - part 1
-%addpath('/data_birdshire/cobratoolbox');
-%addpath('/opt/gurobi1200/linux64/matlab');
-
-
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
-
 curr_wd = 'D:/work/Integrated_network_model/Git_hub_codes/TMS';
 cd(curr_wd)
+
+initCobraToolbox(false);
+changeCobraSolver('gurobi', 'all');
+
 cp_r1 = "CP_round_i.xlsx";
 cp_r1 = readtable(cp_r1);
 
