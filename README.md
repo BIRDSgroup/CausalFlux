@@ -1,6 +1,6 @@
-# CausalFlux: an iterative causal surgery and linear optimization approach to model feedback in a gene-metabolite system
+# Modeling and dissecting bidirectional feedback in gene-metabolite systems using the CausalFlux method
 
-This is the official repository of the paper "CausalFlux: an iterative causal surgery and linear optimization approach to model feedback in a gene-metabolite system" by Nilesh Subramanian, Pavan Kumar, Raghunathan Rengasamy, Nirav Bhatt, and Manikandan Narayanan.
+This is the official repository of the paper "Modeling and dissecting bidirectional feedback in gene-metabolite systems using the CausalFlux method" by Nilesh Subramanian, Pavan Kumar, Raghunathan Rengasamy, Nirav Bhatt, and Manikandan Narayanan.
  <!-- ![GH_1-1](https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20TMs/GH_1-1.png) -->
 <img src="https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20TMs/GH_1-1.png" alt="CausalFlux Overview" style="width:35%; height:auto;">
 
