@@ -1,7 +1,3 @@
-% matlab function - step 2a  - FVA with 0 objective function 
-%addpath('/data_birdshire/cobratoolbox');
-%addpath('/opt/gurobi1200/linux64/matlab');
-
 curr_wd = 'D:/work/Integrated_network_model/Git_hub_codes/TMS';
 cd(curr_wd)
 
@@ -9,14 +5,10 @@ Updated_FVA_round_i = "Updated_FVA_round_i.xlsx";
 Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","preserve");
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
+ initCobraToolbox(false);
+ changeCobraSolver('gurobi', 'all');
 
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
-
-% fileName = 'Toy_M_4_v2.mat'; 
- fileName = 'Toy_M_4_v3.mat'; 
+fileName = 'Toy_M_4_v3.mat'; 
 TM_0 = readCbModel(fileName);
 
 eb_var = readvars("Exch_b.csv");
