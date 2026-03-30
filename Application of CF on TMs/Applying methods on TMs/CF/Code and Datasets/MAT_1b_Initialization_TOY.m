@@ -1,18 +1,10 @@
-% matlab function - Initialization
-% part - 1 
-%addpath('/data_birdshire/cobratoolbox');
-%addpath('/opt/gurobi1200/linux64/matlab');
-
 curr_wd = 'D:/work/Integrated_network_model/Git_hub_codes/TMS';
 cd(curr_wd)
 
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+initCobraToolbox(false);
+changeCobraSolver('gurobi', 'all');
 
 fileName = 'TM_0_obj.mat'; 
 TM_0 = readCbModel(fileName);
@@ -92,10 +84,6 @@ TM_1.c(4)=1;
 sol = optimizeCbModel(TM_1);
 writematrix(sol.v,"FBA_to_check.csv")
 
-%%%% Final FBA --- only for naive case - WT, C and D KO
-%  TM_1.c(4)=1;
-%  sol = optimizeCbModel(TM_1);
-%  writematrix(sol.v,"FBA_to_check.csv")
 
 
 
