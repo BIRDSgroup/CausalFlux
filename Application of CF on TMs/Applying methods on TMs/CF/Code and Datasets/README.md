@@ -15,7 +15,7 @@
      2.2) "FVA_to_check.xlsx" file (for every gene KO case under TMs/exchange rate) contains the final iterations (after convergence) steady-state reaction flux predictions.
 3) The folders generated: *SC_sep_plots*, *Sep_act_vs_pred_plot*, *BM_ACT_VS_PRED*
      3.1) Each of these folders contains plots that corresponds to the findings reported in the manuscript.
-     3.2) These plots genereted through this run are used to develop Fig. 2, 3 (from main manuscript) and Fig S3, S4 (from supplementary material)
+     3.2) These plots genereted through this run are used to develop Fig. 2, 3 (from main manuscript) and Fig S3 and S4 (from supplementary material)
 4) The folders generated: *TM1*, *TM2*, *TM3*
      4.1) Each of these folders contains files for the Spearman correlation mentioned in the manuscript
      4.2) These results were used to draw conclusions/results in the manuscript
