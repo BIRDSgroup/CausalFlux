@@ -9,7 +9,7 @@
    
 ## Changes to be made in three ".m" scripts 
 1) Make sure the working directory "curr_wd" (line 1) in all these scripts are changed to the working directory where all the files and codes from this folder are stored (same as above).
-2) By default (line 25) "LB media" is simulated for the single-gene KOs. You can change this other media conditions like "Minimal M9 media" (line 26) or "TSB media" (line 27) depending on your choice
+2) By default (line 25) "LB media" is the environment for the single-gene KOs. You can change this other media conditions like "Minimal M9 media" (line 26) or "TSB media" (line 27) depending on your choice
 
 ## Key Notes 
 
