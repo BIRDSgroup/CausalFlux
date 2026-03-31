@@ -5569,6 +5569,390 @@ ggsave("GIMME_FVA_max.jpeg")
 
 
 
+###################################################### iteration vs iteration plot 
+
+
+#######################################################################################################
+##############################################  for TM1
+s <- c("WT","B","E","X","A","Z")
+ss <- c("WT","B KO","E KO","X KO","A KO","Z KO")
+e <- c(3.2,320,3200)
+
+############  3.2
+setwd(paste0(curr_wd,"TM1/"))
+act_320 <- read.csv("Actual_Pred_data_3.2_TM_1.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM1_",e[1],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3.2",length(overall_cor)/2),
+  TM = rep("TM1",length(overall_cor)/2)
+)
+
+OG_df <- df_ret
+
+############  320
+setwd(paste0(curr_wd,"TM1/"))
+act_320 <- read.csv("Actual_Pred_data_320_TM_1.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM1_",e[2],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("320",length(overall_cor)/2),
+  TM = rep("TM1",length(overall_cor)/2)
+)
+
+
+
+OG_df <- rbind(OG_df,df_ret)
+
+
+############  3200
+setwd(paste0(curr_wd,"TM1/"))
+act_320 <- read.csv("Actual_Pred_data_3200_TM_1.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM1_",e[3],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3200",length(overall_cor)/2),
+  TM = rep("TM1",length(overall_cor)/2)
+)
+
+
+
+OG_df <- rbind(OG_df,df_ret)
+
+
+
+
+
+
+#######################################################################################################
+##############################################  for TM2
+s <- c("WT","X","A","I")
+ss <- c("WT","X KO","A KO","I KO")
+e <- c(3.2,320,3200)
+
+############  3.2
+setwd(paste0(curr_wd,"TM2/"))
+act_320 <- read.csv("Actual_Pred_data_3.2_TM_2.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM2_",e[1],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret2 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3.2",length(overall_cor)/2),
+  TM = rep("TM2",length(overall_cor)/2)
+)
+
+OG_df2 <- df_ret2
+
+############  320
+setwd(paste0(curr_wd,"TM2/"))
+act_320 <- read.csv("Actual_Pred_data_320_TM_2.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM2_",e[2],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret2 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("320",length(overall_cor)/2),
+  TM = rep("TM2",length(overall_cor)/2)
+)
+
+
+
+OG_df2 <- rbind(OG_df2,df_ret2)
+
+
+############  3200
+setwd(paste0(curr_wd,"TM2/"))
+act_320 <- read.csv("Actual_Pred_data_3200_TM_2.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM2_",e[3],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret2 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3200",length(overall_cor)/2),
+  TM = rep("TM2",length(overall_cor)/2)
+)
+
+
+
+OG_df2 <- rbind(OG_df2,df_ret2)
+
+
+
+#######################################################################################################
+##############################################  for TM3
+s <- c("WT","X","A")
+ss <- c("WT","X KO","A KO")
+e <- c(3.2,320,3200)
+
+############  3.2
+setwd(paste0(curr_wd,"TM3/"))
+act_320 <- read.csv("Actual_Pred_data_3.2_TM_3.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM3_",e[1],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret3 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3.2",length(overall_cor)/2),
+  TM = rep("TM3",length(overall_cor)/2)
+)
+
+OG_df3 <- df_ret3
+
+############  320
+setwd(paste0(curr_wd,"TM3/"))
+act_320 <- read.csv("Actual_Pred_data_320_TM_3.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM3_",e[2],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret3 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("320",length(overall_cor)/2),
+  TM = rep("TM3",length(overall_cor)/2)
+)
+
+
+
+OG_df3 <- rbind(OG_df3,df_ret3)
+
+
+############  3200
+setwd(paste0(curr_wd,"TM3/"))
+act_320 <- read.csv("Actual_Pred_data_3200_TM_3.csv")
+overall_cor <- c()
+for(i in 1:length(s)){
+  setwd(paste0(curr_wd,"KO_data_TM3_",e[3],"/",s[i],"/"))
+  fva_1 <- read.csv("FVA_incorp_1.csv")
+  fva_2 <- read.csv("FVA_incorp_2.csv")
+  
+  fva_max_1 <- fva_1[[4]]
+  fva_max_2 <- fva_2[[4]]
+  
+  act_320_wt <- act_320[act_320$Settings == ss[i],1]
+  
+  c1 <- cor.test(act_320_wt,fva_max_1, method = "spearman")
+  c1_val <- c1$estimate
+  c2 <- cor.test(act_320_wt,fva_max_2, method = "spearman")
+  c2_val <- c2$estimate
+  
+  wt_cor <- c(c1_val,c2_val)
+  overall_cor <- c(overall_cor,wt_cor)
+}
+
+
+df_ret3 <- data.frame(
+  KO_types = s, 
+  iter_1 = overall_cor[seq(1, length(overall_cor), by = 2)], 
+  iter_2 = overall_cor[seq(2, length(overall_cor), by = 2)],
+  exch_rate = rep("3200",length(overall_cor)/2),
+  TM = rep("TM3",length(overall_cor)/2)
+)
+
+
+
+OG_df3 <- rbind(OG_df3,df_ret3)
+
+
+
+OOG <- rbind(OG_df,OG_df2,OG_df3)
+
+
+setwd(curr_wd)
+write.csv(OOG,"rho_iters.csv")
+
+rho_df <- read.csv("rho_iters.csv", header = T)
+
+
+
+library(ggplot2)
+library(ggpubr)
+library(ggrepel)
+
+ggplot(rho_df, aes(x = iter_1, 
+                   y = iter_2)) +
+  geom_jitter(
+    aes(color = TM, shape = as.factor(exch_rate)),
+    width = 0.05,
+    height = 0.05,
+    size = 3,
+    alpha = 0.8
+  ) +theme_bw()+ labs(title = "Comparison of rho computed between the iterations \nruns of CausalFlux on TMs",x = "rho from Iteration-1", y = "rho from Iteration-2")+geom_abline()+xlim(0,1.15)+ylim(0,1.15)+
+  geom_text_repel(
+    data = subset(rho_df, abs(iter_1 - iter_2) >= 0),
+    aes(label = KO_types),   max.overlaps = 100
+    
+  )
+
+
+
+
+
 
 
 
