@@ -364,8 +364,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
         }
       }
       names(target_genes_list_indices) <- modified_interaction_df[[1]]
-      
-      
       ## Get the target gene names
       
       target_genes_list_names <- list()
@@ -380,8 +378,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
         x <- bn_arcs[target_genes_list_indices[[i]],]
         tf_tg_df <- rbind(tf_tg_df,x)
       }
-      
-      
       
       #Get the details of which metabolites are getting affected by the Target genes
       tf_tg_df[,ncol(tf_tg_df)+1] <- 0
@@ -411,9 +407,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
           }
         }
       }
-      
-      
-      
       
       biis <- c()
       for(i in 1:nrow(modified_interaction_df)){
@@ -1163,7 +1156,6 @@ CausalFlux_runs <- function(case,curr_wd,ips,maxiteration,Glucose_exchange,Oxyge
 
 
 
-
 #########################################  Get the inputs ready!!!
 curr_wd <- c("D:/work/Integrated_network_model/Git_hub_codes/Ecoli/CF/")
 
@@ -1195,12 +1187,12 @@ Oxygen_exchange <- 14.5
 extra_rxn_exchange <- c()
 
 
+### Example for case 1 scenario to run single-gene KO or WT condition in E. coli 
 ips <- c("serC")
 CausalFlux_runs(1,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
 
 
-
-
+### Example for case 12 scenario to run multiple single-gene KOs in E. coli 
 ips <- c("WT","gabT")
 CausalFlux_runs(2,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
 
