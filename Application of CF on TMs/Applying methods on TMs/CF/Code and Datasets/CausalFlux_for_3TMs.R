@@ -5949,6 +5949,10 @@ ggplot(rho_df, aes(x = iter_1,
     
   )
 
+ggsave("rho_iter1_iter2.pdf")
+ggsave("rho_iter1_iter2.jpeg")
+
+
 
 
 
