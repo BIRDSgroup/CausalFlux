@@ -27,7 +27,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
 
 
 
-### Formart for specific input arguments
+### Format for specific input arguments
 1) **Feedback from metabolites to genes**
    
    The data for this information should of the following format. The columns (column names) must be:
