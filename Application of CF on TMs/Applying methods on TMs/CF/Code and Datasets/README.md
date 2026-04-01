@@ -19,9 +19,19 @@
 3) The folders generated: *SC_sep_plots*, *Sep_act_vs_pred_plot*, *BM_ACT_VS_PRED*
    
      3.1) Each of these folders contains plots that correspond to the findings reported in the manuscript.
+
+      |Folders|Description|
+   |---|---|
+   |SC_sep_plots|Plots from Fig 2D, Fig 3[A-D], Fig S3|
+   |BM_ACT_VS_PRED|Plots from Fig 3[E-G]|
+   |Sep_act_vs_pred_plot|Plots from Fig 2[B-C]; such plots for all the 39 TM cases can be found here|
+
+   "rho_iter1_iter2.pdf" in the working directory is Fig S4
    
      3.2) These plots generated through this run are used to develop Fig. 2, 3 (from the main manuscript) and Fig S3 and S4 (from the supplementary material)
    
-4) The folders generated: *TM1*, *TM2*, *TM3*
+3) The folders generated: *TM1*, *TM2*, *TM3*
+   
      4.1) Each of these folders contains files for the Spearman correlation mentioned in the manuscript
+   
      4.2) These results were used to draw conclusions/results in the manuscript
