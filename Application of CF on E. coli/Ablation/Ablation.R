@@ -51,6 +51,13 @@ dist_matrix_1 <- dist_matrix
 dist_matrix_1 <- as.data.frame(dist_matrix_1)
 dist_matrix_1[dist_matrix_1 == Inf] <- 10
 
+count_1s <- colSums(dist_matrix_1 == 1)
+onehop_df <- data.frame(
+  "Metabolic_feedback_genes" = colnames(dist_matrix_1),
+  "Num_of_1hops" = count_1s
+)
+onehop_df <- onehop_df[order(-onehop_df$Num_of_1hops), ]
+write.csv(onehop_df,"onehop_metabolicfeedbackgenes_df.csv")
 
 
 ########################################################################################
