@@ -1,4 +1,5 @@
 # Guide for the codes/data in this folder
 
-## CausalFlux_FULL_RUN_ON_TMS
-Contains all the codes/data for applying CausalFlux on the testbed models. Please look at the "README.md" file in this folder for further details
+## Code and Datasets
+Provides the code/datasets to run CausalFlux on all the TMs. The results and datasets generated from this folder correspond to the "**Evaluating CausalFlux on Testbed Models**" of the manuscript
+
