@@ -25,6 +25,6 @@ a) Make sure the "ips" argument is vector of length at least 2.
 b) For example: ips <- c("WT,"serC") or ips <- c("serC", "gabT", "argD")
 c) After running, the folder **CausalFlux_multi_runs** will be generated containing the prediction results for each gene KO in a separate folder
 
-4) The excel file *FVA_to_check_P1.xlsx* under the folders corresponding to gene KO contains the results after the final iteration/convergenece of algorithm. The biomass reaction "BIOMASS_Ec_iML1515_core_75p37M" from this file is looked at for the final result.
-5) The default values for the arguments like **maxiteration**, **Glucose_exchange**, **Oxygen_exchange** and **extra_rxn_exchange** are already set here
+3) The excel file *FVA_to_check_P1.xlsx* under the folders corresponding to gene KO contains the results after the final iteration/convergenece of algorithm. The biomass reaction "BIOMASS_Ec_iML1515_core_75p37M" from this file is looked at for the final result.
+4) The default values for the arguments like **maxiteration**, **Glucose_exchange**, **Oxygen_exchange** and **extra_rxn_exchange** are already set here
 
