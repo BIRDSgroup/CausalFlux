@@ -17,12 +17,17 @@
 2) You can run this script under two cases
    
 2.1) Case - 1: This setting is to run our CausalFlux algorithm for only one single-gene KO or WT condition
+
 a) Make sure the "ips" argument is vector of length 1.
+
 b) For example: ips <- c("serC") or ips <- c("WT") or ips <- c("gabT")  
 
 2.2) Case - 2: This setting is to run our CausalFlux algorithm for multiple single-gene KOs (including WT condition as well)
+
 a) Make sure the "ips" argument is vector of length at least 2.
+
 b) For example: ips <- c("WT,"serC") or ips <- c("serC", "gabT", "argD")
+
 c) After running, the folder **CausalFlux_multi_runs** will be generated containing the prediction results for each gene KO in a separate folder
 
 3) The excel file *FVA_to_check_P1.xlsx* under the folders corresponding to gene KO contains the results after the final iteration/convergenece of algorithm. The biomass reaction "BIOMASS_Ec_iML1515_core_75p37M" from this file is looked at for the final result.
