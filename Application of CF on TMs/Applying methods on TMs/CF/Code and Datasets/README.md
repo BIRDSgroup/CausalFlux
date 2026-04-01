@@ -31,7 +31,14 @@
      3.2) These plots generated through this run are used to develop Fig. 2, 3 (from the main manuscript) and Fig S3 and S4 (from the supplementary material)
    
 3) The folders generated: *TM1*, *TM2*, *TM3*
-   
+     |Folders|Description|File names|
+   |---|---|---|
+   |TM1|Predictions of Actual, CausalFlux (FVAm min, FVA max and FBA), GIMME (FVA min, FVA max and FBA); Spearman correlation between these methods and actual - for all TM1 cases|Actual_Pred_data_3.2_TM_1, Actual_Pred_data_320_TM_1, Actual_Pred_data_3200_TM_1; Cor_PV_RMSE_data_3.2_TM_1, Cor_PV_RMSE_data_320_TM_1, Cor_PV_RMSE_data_3200_TM_1  |
+   |TM2|Predictions of Actual, CausalFlux (FVAm min, FVA max and FBA), GIMME (FVA min, FVA max and FBA); Spearman correlation between these methods and actual - for all TM2 cases|Actual_Pred_data_3.2_TM_2, Actual_Pred_data_320_TM_2, Actual_Pred_data_3200_TM_2; Cor_PV_RMSE_data_3.2_TM_2, Cor_PV_RMSE_data_320_TM_2, Cor_PV_RMSE_data_3200_TM_2 |
+   |TM3|Predictions of Actual, CausalFlux (FVAm min, FVA max and FBA), GIMME (FVA min, FVA max and FBA); Spearman correlation between these methods and actual - for all TM3 cases|Actual_Pred_data_3.2_TM_3, Actual_Pred_data_320_TM_3, Actual_Pred_data_3200_TM_3; Cor_PV_RMSE_data_3.2_TM_3, Cor_PV_RMSE_data_320_TM_3, Cor_PV_RMSE_data_3200_TM_3 |
+
      4.1) Each of these folders contains files for the Spearman correlation mentioned in the manuscript
    
      4.2) These results were used to draw conclusions/results in the manuscript
+
+     4.3) Supplementary Data 1: all "Cor_PV_RMSE" data combined from TM1, TM2 and TM3 folders
