@@ -20,11 +20,11 @@ CF framework is distributed in the hope that it will be useful, but WITHOUT ANY 
 ### Section 1: Our CF framework
 This section presents the code for the CF framework, applicable to any generic case. It includes information on the datasets required and the function arguments. A detailed methodology is described in our paper.
 
-### Section 2: Application of CF framework on the test models (TMs)
+### Section 2: Application of CF framework on the testbed models (TMs)
 This section provides the following information:
 1) Codes/data for simulating the steady-state fluxes and gene expression data in the three TMs for the WT/KO cases under all the exchange rates.
-2) Codes/data for running the CF, TRIMER, and GIMME approach on the TMs.
-3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material.
+2) Codes/data for running the CF on the TMs [Code and Datasets](../CF/).
+3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material[Code and Datasets](../CF/).
 
 ### Section 3: Application of CF framework on the real-world data (E. coli)
 This section provides the following information:
