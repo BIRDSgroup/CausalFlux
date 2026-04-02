@@ -23,7 +23,7 @@ essen_exch_rxns_dt = readtable("essential_exch_rxns_ids_iml1515.csv");  %%% list
 TM_0.lb(essen_exch_rxns_dt.Var1)= -0.001;
 
 cd(curr_wd)
-LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");  %%% a datframe with index of the exchange reactions for media condition and the upper bounds for those reactions
+LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");  %%% a dataframe with index of the exchange reactions for media condition and the upper bounds for those reactions
 % LBmediaconstraints = readtable("M9_serine_galacturonate.csv");
 % LBmediaconstraints = readtable("TSBmed.csv");
 
@@ -36,7 +36,7 @@ TM_0.lb(181) = -readvars("Exch_G.csv");   %%% glucose exchange reaction in the m
 TM_0.lb(1982) = -readvars("Exch_O.csv");  %%% oxygen exchange reaction in the metabolic model
 
 
-TM_0.ub(2713:2731) = 10; %%% extra sink reactions added based on metabolic feedback information 
+TM_0.ub(2713:2731) = 10; %%% indices specifying start and end of added sink reactions 
 
 
 
