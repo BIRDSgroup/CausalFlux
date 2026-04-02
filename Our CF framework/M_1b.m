@@ -1,25 +1,16 @@
-% matlab function - Initialization
-% part - 1 
 curr_wd = 'D:\work\Integrated_network_model\Git_hub_codes\Ecoli\CF';
 cd(curr_wd)
 
 
 % some pre-requisites 
-% initCobraToolbox(false);
-% changeCobraSolver('gurobi', 'all');
-load('D:/work/Integrated_network_model/Toy_model/auto_new_model_current_approach_27_03_24/Causal_Surgery/environment')
-restoreEnvironment(environment);
+initCobraToolbox(false);
+changeCobraSolver('gurobi', 'all');
 
-%fileName = 'Ecoli_model_aerobic_sink_no_media.mat';
-%fileName = 'Ecoli_sink_no_media_aerobic_iML1515.mat';
+
 fileName = 'NEW_iML1515_modified_sink.mat';
 TM_0 = readCbModel(fileName);
 
-% fileName = 'TR_based_modified_ecoli.mat';
-% TM_0 = readCbModel(fileName);
-
 TM_0.c(:) = 0;
-
 
 cd(curr_wd)
 exch_rxns_dt = readtable("Exch_iml1515.csv");
@@ -36,19 +27,16 @@ LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");
 % LBmediaconstraints = readtable("M9_serine_galacturonate.csv");
 % LBmediaconstraints = readtable("TSBmed.csv");
 
-% 
+
  TM_0.lb(LBmediaconstraints.media_list)=-LBmediaconstraints.media_list_ub;
 
 
- cd(curr_wd)
-TM_0.lb(181) = -readvars("Exch_G.csv");   %iML1515
-TM_0.lb(1982) = -readvars("Exch_O.csv");
+cd(curr_wd)
+TM_0.lb(181) = -readvars("Exch_G.csv");   %iML1515 glucose exchange reaction 
+TM_0.lb(1982) = -readvars("Exch_O.csv");  %iML1515 oxygen exchange reaction 
 
 
-% TM_0.ub(2383:2448) = 1000;
-
-%
-TM_0.ub(2713:2731) = 10; % iML1515
+TM_0.ub(2713:2731) = 10; % iML1515 extra sink reactions added based on metabolic feedback information 
 
 
 
@@ -67,13 +55,7 @@ writecell(fva_op_round_0,"FVA_1b_obj_0_P1.xlsx")
 
 TM_1 = TM_0;
 
-% TM_1.c(926)=1;  % for our IAF1260 - Biomass
-%  TM_1.c(1005)=1;  % for TR Ecoli - Biomass
-
-% TM_1.c(2267)=1;  % for our IAF1260 - Indole
-% TM_1.c(2272)=1;  % for TR Ecoli - Biomass
-
-TM_1.c(2669)=1; % for iML1515
+TM_1.c(2669)=1; % for iML1515 biomass
 
 
 [min_x_model_round_1, max_x_model_round_1] = fluxVariability(TM_1);
@@ -87,15 +69,8 @@ fva_op_round_1 = [rxn_abbrev,minimum_flux_round_1, maximum_flux_round_1];
 cd(curr_wd)
 writecell(fva_op_round_1,"FVA_to_check_P1.xlsx")
 
-% TM_1.c(926)=1;  % for our IAF1260 - Biomass
-%  TM_1.c(1005)=1;  % for TR Ecoli - Biomass
 
-% TM_1.c(2267)=1;  % for our IAF1260 - Indole
-% TM_1.c(2272)=1;  % for TR Ecoli - Biomass
-
-TM_1.c(2669)=1; % for iML1515
-
-%TM_1.ub(2383:2448) = 1000;
+TM_1.c(2669)=1; % for iML1515 biomass
 
 
 sol = optimizeCbModel(TM_1);
