@@ -43,7 +43,7 @@
    
 ### Option B: Use the pre-computed predictions from the ablation models
 1) "Ecoli_Ablation_Predictions.csv" already contains the predictions from the CausalFlux model run on the 5 different ablation cases for 798 single-gene KOs
-2) The given drive link contains the folders/files with the CausalFlux predictions on the 5 different ablation cases for 798 single-gene KOs. "Ecoli_Ablation_Predictions.csv" was generated using this data.
+2) The given [drive link](https://drive.google.com/drive/folders/18tuYSm5f3Rch5F4FhmmQZDuLzUUGld6t?usp=sharing) contains the folders/files with the CausalFlux predictions on the 5 different ablation cases for 798 single-gene KOs. "Ecoli_Ablation_Predictions.csv" was generated using this data.
    
 ## Use "Ablation.R" to plot the results
 Change the "setwd()" in line 5 to match the working directory where the "Ablation.R", "Ecoli_Ablation_Predictions.csv", "Metabolite_Gene_Regulation.RDS" and "bn_TR.RDS" are stored 
