@@ -1,4 +1,4 @@
-
+##########################################################################################
 CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr){
   
   GRN_CS <- function(KO,sl, pl,g, op1){
@@ -113,7 +113,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
     }
     return(yu)}
   
-
+  
   get_the_binary_data <- function(df1, df2, sl){
     bin_vec <- rep(0,times=nrow(df1))
     for(i in 1:nrow(df1)){
@@ -215,8 +215,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
     
     if(nrow(df_1) == 0){
       op_list <- list("TF_TG_MET_df" = NULL, "TF_TG_int" = NULL)
-      #op_list <- vector("list", 2)
-      #names(op_list) <- c("TF_TG_MET_df","TF_TG_int")
     }else{
       # to remove those TFs with both "+" and "-" interactions
       # get the unique TFs
@@ -287,8 +285,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
         }
         
         names(more_1_gene_int) <- more_1_gene
-        #some_ls <- list(x_id,more_1_gene_int)
-        #names(some_ls) <- c("len_more_1_ids","list")
         
         # to get a df with only 1 rep of regulation
         only_1_idx <- c()
@@ -368,8 +364,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
         }
       }
       names(target_genes_list_indices) <- modified_interaction_df[[1]]
-      
-      
       ## Get the target gene names
       
       target_genes_list_names <- list()
@@ -384,8 +378,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
         x <- bn_arcs[target_genes_list_indices[[i]],]
         tf_tg_df <- rbind(tf_tg_df,x)
       }
-      
-      
       
       #Get the details of which metabolites are getting affected by the Target genes
       tf_tg_df[,ncol(tf_tg_df)+1] <- 0
@@ -415,9 +407,6 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
           }
         }
       }
-      
-      
-      
       
       biis <- c()
       for(i in 1:nrow(modified_interaction_df)){
@@ -533,9 +522,9 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
       
       gene_cp_gg_df <- data.frame(tg_g,all_tgs_eval_bde)
       colnames(gene_cp_gg_df) <- c("MET_MODEL_TG_genes","Probability")
-
+      
       bid <- c()
-
+      
       b <- match(gene_cp_gg_df$MET_MODEL_TG_genes,GS$gene_name)
       bid <- GS$Gene[b]
       
@@ -586,11 +575,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
       
       FBA_incorp <- read_csv("FBA_to_check_P1.csv", col_names = FALSE)
       write.csv(FBA_incorp, paste0("FBA_incorp_P1_",ct,".csv"))
-      
-      # FVA_P <- FVA_incorp
-      # #FVA_P <- FBA_incorp
-      #
-      # FVA_prev <- FVA_III
+
       
     }
     return(FVA_incorp)}
@@ -865,7 +850,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
     round_2_vec <- c()
     
     
-    if(p == 0){
+    
       for(i in 1:length(sink_FVA_round_2)){
         if(round(sink_FVA_round_2[i])> 0){
           round_2_vec[i] = 1
@@ -873,19 +858,11 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
           round_2_vec[i] = 0
         }
       }
-    }else{
-      for(i in 1:length(sink_FVA_round_2)){
-        if(round(sink_FVA_round_2[i])> 0){
-          round_2_vec[i] = 1
-        }else{
-          round_2_vec[i] = 0
-        }
-      }
-    }
+    
     
     round_1_vec <- c()
     
-    if(p == 0){
+    
       for(i in 1:length(sink_FVA_round_1)){
         if(round(sink_FVA_round_1[i])> 0){
           round_1_vec[i] = 1
@@ -893,15 +870,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
           round_1_vec[i] = 0
         }
       }
-    }else{
-      for(i in 1:length(sink_FVA_round_1)){
-        if(round(sink_FVA_round_1[i])> 0){
-          round_1_vec[i] = 1
-        }else{
-          round_1_vec[i] = 0
-        }
-      }
-    }
+    
     
     x_status <- identical(round_1_vec, round_2_vec)
     
@@ -920,8 +889,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
   library(writexl)
   library(tidyverse)
   
-  #curr_wd <- c("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/")
-  
+
   setwd(curr_wd)
   
   
@@ -941,7 +909,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
   gene_subsys <- gs
   FMR_ <- fmr
   
-
+  
   setwd(curr_wd)
   matlabr::run_matlab_script("M_1b.m", display = TRUE, verbose = TRUE)
   
@@ -950,7 +918,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
   FVA_round_0 <- as.data.frame(FVA_round_0)
   
   count <- 1
-
+  
   setwd(curr_wd)
   FVA_to_check <- readxl::read_xlsx(paste0(curr_wd,"/FVA_to_check_P1.xlsx"), col_names = FALSE)
   colnames(FVA_to_check) <- c("Reactions", "Minimum_flux", "Maximum_flux")
@@ -1082,7 +1050,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
       
       
       iter_op <- to_check_sink_rxn_iter(FVA_XP,FVA_i, FVA_iplus1,FMR_)
-    
+      
       count <- count + 1
       
       # step - 2e - break
@@ -1116,7 +1084,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
     for(i in 1:(count)){
       uu <- c(uu,paste0("Updated_FVA_round_incorp_P1_",i,".csv"))
     }
-
+    
     
     my_files <- c("FVA_1b_obj_0_P1.xlsx","CP_round_P1_i.xlsx","FBA_to_check_P1.csv","FVA_to_check_P1.xlsx","GPR_eval_round_P1_i.xlsx","Updated_FVA_round_P1_i.xlsx",vv,bb,pp,uu)
     curr_wd_ <- paste0(curr_wd,"/")
@@ -1140,75 +1108,99 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
     path2 <- paste0(to,"/Case_P1_",u,"/",m[i])
     file.rename(path1,path2)
   }
-   
+  
 }
 
 ###################################################################################################
 
-curr_wd <- c("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/Parallel_Runs/CF_S/")
+
+CausalFlux_runs <- function(case,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange, GE, GSL, GPL,MGR,GS,FMR){
+  if(case == 1 && length(ips)==1){
+    ###### Case 1 
+    CF_function(curr_wd,ips,Glucose_exchange,Oxygen_exchange,maxiteration,1,extra_rxn_exchange,ge = GE,gsl = GSL, gpl = GPL, mgr = MGR,gs = GS, fmr = FMR$x)
+    
+  }else if(case == 2 && length(ips)!=1){
+    ###### Case 2
+    Multiple_single_KO_genes <- ips
+    for(i in 1:length(Multiple_single_KO_genes)){
+      CF_function(curr_wd,Multiple_single_KO_genes[i],Glucose_exchange,Oxygen_exchange,maxiteration,i,extra_rxn_exchange,ge = GE,gsl = GSL, gpl = GPL, mgr = MGR,gs = GS, fmr = FMR$x)
+      
+    }
+    
+    
+    s <- c()
+    for(i in 1:length(Multiple_single_KO_genes)){
+      s <- c(s,paste0("Case_P1_",i))
+    }
+    
+    dir.create(paste0(curr_wd,"/CausalFlux_multi_runs"))
+    from <- curr_wd            #Current path of your folder
+    to   <- curr_wd            #Path you want to move it.
+    
+    m <- s
+    
+    for(i in 1:length(Multiple_single_KO_genes)){
+      path1 <- paste0(from,"/",m[i])
+      path2 <- paste0(to,"/CausalFlux_multi_runs/",m[i])
+      file.rename(path1,path2)
+    }
+    
+  }else if(case == 1 && length(ips)!=1){
+    print("Warning: For case 1 you need to provide only one gene for KO or WT scenario")
+    print("Warning: If you want to execute multiple single-gene KOs then input case as 2")
+  }else if(case == 2 && length(ips)==1){
+    print("Warning: For case 2 you need to provide at least two scenarios (gene KOs/WT cases) or multiple single-KO cases")
+    print("Warning: If you want to run only 1 single-gene KO then input case as 1")
+  }
+} 
 
 
-setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/GRN_REQ_WO_BIGG/")
+
+#########################################  Get the inputs ready!!!
+curr_wd <- c("D:/work/Integrated_network_model/Git_hub_codes/Ecoli/CF/")
+
+
+setwd(paste0(curr_wd,"GRN"))
 GSL <- readRDS("bn_TR.RDS")
 GPL <- readRDS("bn_params_TR.RDS")
-
-  ## Metabolic module
-
-
-load("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/GRN_REQ_WO_BIGG/train_data_bn.RData")
+load(paste0(curr_wd,"GRN/train_data_bn.RData"))
 
 GE <- train_bin_set_1
 for(i in 1:ncol(GE))
 {
   GE[,i] <- as.factor(GE[,i])
 }
-  ## get all the variables loaded
-setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/CF_S/MM_REQ/")
-# Our IAF1260 data
+
+## get all the variables loaded
+setwd(paste0(curr_wd,"GSMM"))
 MGR <- readRDS("Metabolite_Gene_Regulation.RDS")
-# TRIMER ecoli
-# met_gene_reg_data <- readRDS("Metabolite_Gene_Regulation_TR.RDS")
 GS <- readRDS("New_gene_subsys_iML1515.RDS")
 colnames(GS) <- c("Gene","gene_name")
 
 
-setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/Exchange_rxns/")
+setwd(curr_wd)
 FMR <- read.csv("Final_FMR_iml1515.csv")
 
-setwd("D:/work/Integrated_network_model/Ecoli_intg_ntwk/metabolic_aspect/Auto_RUN/Causal_Surgery/New_Results/LB/")
-RD_check <- read.csv("Overall_Ecoli_data_LB_new_results_with_labels.csv", header = T)
-
-RD_check <- RD_check[67:133,]
-
-tu <- nrow(RD_check)
+maxiteration <- 10
+Glucose_exchange <- 8.5
+Oxygen_exchange <- 14.5
+extra_rxn_exchange <- c()
 
 
-er_ind <- c()
-#fmr
-for(i in 1:tu){
-  CF_function(curr_wd,RD_check$Gene[i],0,8.5,14.5,10,i,er_ind,ge = GE,gsl = GSL, gpl = GPL, mgr = MGR,gs = GS, fmr = FMR$x)
-  
-  #CF_S_Version_2_cc(curr_wd,RD_check[[1]][i],0,8.5,14.5,10,i,er_ind,ge = GE,gsl = GSL, gpl = GPL, mgr = MGR,gs = GS, fmr = FMR$x)
-    
-  #CF_S_Version_2_cc(curr_wd,"WT",0,8.5,14.5,10,i,er_ind,ge = GE,gsl = GSL, gpl = GPL, mgr = MGR,gs = GS, fmr = FMR$x)
-  
-}
+### Example for case 1 scenario to run single-gene KO or WT condition in E. coli 
+ips <- c("serC")
+CausalFlux_runs(1,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
+
+
+### Example for case 12 scenario to run multiple single-gene KOs in E. coli 
+ips <- c("WT","gabT")
+CausalFlux_runs(2,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
 
 
 
-s <- c()
-for(i in 1:tu){
-  s <- c(s,paste0("Case_P1_",i))
-}
 
-dir.create(paste0(curr_wd,"/CF_S_R2"))
-from <- curr_wd            #Current path of your folder
-to   <- curr_wd            #Path you want to move it.
 
-m <- s
 
-for(i in 1:tu){
-   path1 <- paste0(from,"/",m[i])
-   path2 <- paste0(to,"/CF_S_R2/",m[i])
-  file.rename(path1,path2)
-}
+
+
+
