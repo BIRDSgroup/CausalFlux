@@ -33,3 +33,17 @@ c) After running, the folder **CausalFlux_multi_runs** will be generated contain
 3) The excel file *FVA_to_check_P1.xlsx* under the folders corresponding to gene KO contains the results after the final iteration/convergenece of algorithm. The biomass reaction "BIOMASS_Ec_iML1515_core_75p37M" from this file is looked at for the final result.
 4) The default values for the arguments like **maxiteration**, **Glucose_exchange**, **Oxygen_exchange** and **extra_rxn_exchange** are already set here
 
+## To run for 798 single-gene KOs (faster way)
+ 1) The list of 798 gene names can be obtained from
+ 2) For faster runs of CausalFlux you can create multiple folders (K) of "CausalFlux_Runs" with its contents
+ 3) Open K terminals and run the "CausalFlux.R" scripts from each of these K folders
+ 4) Each of these K executions of "CausalFlux.R" can be run of "case 2" setting to run for multiple single-gene KOs
+
+        4a) For example: 
+
+
+
+
+
+
+
