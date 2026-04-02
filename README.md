@@ -23,8 +23,8 @@ This section presents the code for the CF framework, applicable to any generic c
 ### Section 2: Application of CF framework on the testbed models (TMs)
 This section provides the following information:
 1) Codes/data for simulating the steady-state fluxes and gene expression data in the three TMs for the WT/KO cases under all the exchange rates.
-2) Codes/data for running the CF on the TMs [Code and Datasets](../CF/).
-3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material[Code and Datasets](../CF/).
+2) Codes/data for running the CF on the TMs [Code and Datasets](https://github.com/BIRDSgroup/CausalFlux/tree/main/Application%20of%20CF%20on%20TMs/Applying%20methods%20on%20TMs/CF/Code%20and%20Datasets).
+3) Codes/data for generating the necessary figures in the manuscript and supplemenatry material[Code and Datasets]((https://github.com/BIRDSgroup/CausalFlux/tree/main/Application%20of%20CF%20on%20TMs/Applying%20methods%20on%20TMs/CF/Code%20and%20Datasets)).
 
 ### Section 3: Application of CF framework on the real-world data (E. coli)
 This section provides the following information:
