@@ -9,22 +9,22 @@ Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","prese
  changeCobraSolver('gurobi', 'all');
 
 
-fileName = 'NEW_iML1515_modified_sink.mat';
+fileName = 'NEW_iML1515_modified_sink.mat';   %%% load the metabolic model 
 TM_0 = readCbModel(fileName);
     
 
 cd(curr_wd)
-exch_rxns_dt = readtable("Exch_iml1515.csv");
+exch_rxns_dt = readtable("Exch_iml1515.csv");  %%% a dataframe with all exchange reactions in the metabolic model and its index
 
 TM_0.lb(exch_rxns_dt.Var1) = 0;
 
 
 cd(curr_wd)
-essen_exch_rxns_dt = readtable("essential_exch_rxns_ids_iml1515.csv");
+essen_exch_rxns_dt = readtable("essential_exch_rxns_ids_iml1515.csv");  %%% list of index of the essential exchange reactions in the metabolic model
 TM_0.lb(essen_exch_rxns_dt.Var1)= -0.001;
 
 cd(curr_wd)
-LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");
+LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");  %%% a dataframe with index of the exchange reactions for media condition and the upper bounds for those reactions
 % LBmediaconstraints = readtable("M9_serine_galacturonate.csv");
 % LBmediaconstraints = readtable("TSBmed.csv");
 
@@ -32,15 +32,15 @@ TM_0.ub(LBmediaconstraints.media_list)=-LBmediaconstraints.media_list_ub;
 
 
 cd(curr_wd)
-TM_0.lb(181) = -readvars("Exch_G.csv");   %iML1515 glucose exchange reaction 
-TM_0.lb(1982) = -readvars("Exch_O.csv");  %iML1515 oxygen exchange reaction 
+TM_0.lb(181) = -readvars("Exch_G.csv");   %%% glucose exchange reaction in the metabolic model
+TM_0.lb(1982) = -readvars("Exch_O.csv");   %%% oxygen exchange reaction in the metabolic model
 
 
-TM_0.ub(2713:2731) = 10; % iML1515 extra sink reactions added based on metabolic feedback information 
+TM_0.ub(2713:2731) = 10;   %%% indices specifying start and end of added sink reactions 
 
 x_model_round_i = TM_0;
 
-x_model_round_i.c(2669)=1; % for iML1515 biomass
+x_model_round_i.c(2669)=1; %%% select the biomass reaction for the metabolic model
 
 
 
@@ -60,7 +60,7 @@ cd(curr_wd)
 writecell(fva_op_round_i,"FVA_to_check_P1.xlsx")
 
  
-x_model_round_i.c(2669)=1; % for iML1515 biomass
+x_model_round_i.c(2669)=1; % %%% select the biomass reaction for the metabolic model
 
 sol = optimizeCbModel(x_model_round_i);
 solv = num2cell(sol.v);
