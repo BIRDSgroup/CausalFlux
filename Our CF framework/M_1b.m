@@ -6,12 +6,9 @@ cd(curr_wd)
 initCobraToolbox(false);
 changeCobraSolver('gurobi', 'all');
 
-
 fileName = 'NEW_iML1515_modified_sink.mat';  %%% load the metabolic model 
 TM_0 = readCbModel(fileName);
-
 TM_0.c(:) = 0;
-
 cd(curr_wd)
 exch_rxns_dt = readtable("Exch_iml1515.csv");   %%% a dataframe with all exchange reactions in the metabolic model and its index
 
@@ -30,11 +27,9 @@ LBmediaconstraints = readtable("LB_media_constraints_iML1515.csv");  %%% a dataf
 
  TM_0.lb(LBmediaconstraints.media_list)=-LBmediaconstraints.media_list_ub;
 
-
 cd(curr_wd)
 TM_0.lb(181) = -readvars("Exch_G.csv");   %%% glucose exchange reaction in the metabolic model
 TM_0.lb(1982) = -readvars("Exch_O.csv");  %%% oxygen exchange reaction in the metabolic model
-
 
 TM_0.ub(2713:2731) = 10; %%% indices specifying start and end of added sink reactions 
 
