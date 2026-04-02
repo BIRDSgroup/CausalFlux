@@ -1192,7 +1192,7 @@ ips <- c("serC")
 CausalFlux_runs(1,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
 
 
-### Example for case 12 scenario to run multiple single-gene KOs in E. coli 
+### Example for case 2 scenario to run multiple single-gene KOs in E. coli 
 ips <- c("WT","gabT")
 CausalFlux_runs(2,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange,GE,GSL,GPL,MGR,GS,FMR)
 
