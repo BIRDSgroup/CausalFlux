@@ -1,6 +1,6 @@
 # Instructions to run "PRCF_Final.R" script
 
-1) Please use the drive link to download the "PROM" and "rFBA" folders
+1) Please use the drive link to download the "PROM" and "rFBA" folders [PROM_rFBA_CausalFlux](https://drive.google.com/drive/folders/1Pn9Rk1JnXdlo2MaUGzPEs8ThsR4dZ65h?usp=sharing)
 2) Make sure the downloaded folders and the R script are in the same working directory
 3) Provide this working directory as "curr_wd" in the script (line 5)
 4) Once these changes are made you can run the script
