@@ -1,29 +1,28 @@
-# A walk-through of our CF framework
+# A walk-through of our CasusalFlux framework
 
 ## Introduction
-This file will provide a walk-through of our CF framework
+This file will provide a walk-through of our CasusalFlux framework
 
 ## Calling the function: 
 Keep the working directory (curr_dir) to the path containing the matlab scripts and R code.
 ```R
-CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr,gs,fmr)
-
+CausalFlux_runs <- function(case,curr_wd,ips,maxiteration,Glucose_exchange,Oxygen_exchange,extra_rxn_exchange, GE, GSL, GPL,MGR,GS,FMR)
 ```
 |Input arguments|Description|
    |---|---|
+   |case|1 for scenario to run single-gene KO or WT condition in E. coli; 2 for scenario to run multiple single-gene KOs in E. coli |
    |curr_wd|Working directory (directory where ".R", ".m" and ".mat" (metabolic model) scripts are located) |
-   |xun|Gene (gene symbol) to be perturbed (can provide one gene or a vector of genes in a for-loop for perturbation)|
-   |vgval|Glucose uptake rate (in mmol/gDCW/hr)|
-   |voval|Oxygen uptake rate (in mmol/gDCW/hr)|
-   |mi|Maximum number of iterations|
-   |u|index for gene (1 for one gene or "i" index of the gene being perturbed if for-loop is used|
-   |exch_rate|exchange rate for other reactions (default: empty)|
-   |ge|Binarized gene expression data (samples x genes)|
-   |gsl|GRN structure learning object (bn learn object) |
-   |gpl|GRN parameter learning object (bn learn object) |
-   |mgr|Feedback from metabolites to genes|
-   |gs|Genes and Subsystems|
-   |fmr|List of exchange/sink reactions corresponding to the feedback metabolites|
+   |ips|Gene (gene symbol) to be perturbed (can provide one gene or a vector of genes in a for-loop for perturbation)|
+   |maxiteration|Maximum number of iterations|
+   |Glucose_exchange|Glucose uptake rate (in mmol/gDCW/hr)|
+   |Oxygen_exchange|Oxygen uptake rate (in mmol/gDCW/hr)|
+   |extra_rxn_exchange|exchange rate for other reactions (default: empty)|
+   |GE|Binarized gene expression data (samples x genes)|
+   |GSL|GRN structure learning object (bn learn object) |
+   |GPL|GRN parameter learning object (bn learn object) |
+   |MGR|Feedback from metabolites to genes|
+   |GS|Genes and Subsystems|
+   |FMR|List of exchange/sink reactions corresponding to the feedback metabolites|
 
 
 
@@ -50,7 +49,7 @@ CF_function <- function(curr_wd,xun,vgval,voval,mi, u, exch_rate, ge,gsl,gpl,mgr
    
 3)  **Metabolic model**
 
-    Metabolic model corresponding to the system being studied. If all metabolites in the **mgr** data are already represented as exchange reactions in the current model, no changes are required. Otherwise, sink reactions should be added for the feedback metabolites.
+    Metabolic model corresponding to the system being studied. If all metabolites in the **MGR** data are already represented as exchange reactions in the current model, no changes are required. Otherwise, sink reactions should be added for the feedback metabolites.
 
 
 ### (B) To be changed in the ".m" scripts
