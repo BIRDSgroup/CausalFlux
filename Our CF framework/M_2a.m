@@ -1,18 +1,14 @@
 curr_wd = 'D:\work\Integrated_network_model\Git_hub_codes\Ecoli\CF';
 cd(curr_wd)
-
 Updated_FVA_round_i = "Updated_FVA_round_P1_i.xlsx";
 Updated_FVA_round_i = readtable(Updated_FVA_round_i, "VariableNamingRule","preserve");
-
 % some pre-requisites 
  initCobraToolbox(false);
  changeCobraSolver('gurobi', 'all');
 
-
 fileName = 'NEW_iML1515_modified_sink.mat';   %%% load the metabolic model 
 TM_0 = readCbModel(fileName);
     
-
 cd(curr_wd)
 exch_rxns_dt = readtable("Exch_iml1515.csv");  %%% a dataframe with all exchange reactions in the metabolic model and its index
 
@@ -34,7 +30,6 @@ TM_0.ub(LBmediaconstraints.media_list)=-LBmediaconstraints.media_list_ub;
 cd(curr_wd)
 TM_0.lb(181) = -readvars("Exch_G.csv");   %%% glucose exchange reaction in the metabolic model
 TM_0.lb(1982) = -readvars("Exch_O.csv");   %%% oxygen exchange reaction in the metabolic model
-
 
 TM_0.ub(2713:2731) = 10;   %%% indices specifying start and end of added sink reactions 
 
