@@ -28,10 +28,9 @@ This section provides the following information:
 
 ### Section 3: Application of CF framework on the real-world data (E. coli)
 This section provides the following information:
-1) Codes/data for running the CF to perform single gene KOs in _E. coli_
+1) Codes/data for running the CF to perform single gene KOs in _E. coli_ [CausalFlux Runs](https://github.com/BIRDSgroup/CausalFlux/tree/main/Application%20of%20CF%20on%20E.%20coli/CausalFlux_Runs)
 2) Codes/data to reconstruct/learn the parameters of the GRN (Gene Regularoty Network) for _E. coli_
-3) Codes/data for running the CF to perform double gene KOs in _E. coli_
-4) Codes/data for generating the necessary table (Table 2 in the manuscript)
+
 
 ## Glossary
 - CF - Causal Flux (our methodology)
@@ -52,4 +51,5 @@ tidyr_1.3.0, tibble_3.2.1, ggplot2_3.4.4, tidyverse_2.0.0, writexl_1.4.2, dplyr_
 
 ### MATLAB
 9.12.0.2039608 (R2022a) Update 5
+
 
