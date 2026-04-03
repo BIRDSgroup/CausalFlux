@@ -49,50 +49,32 @@ CausalFlux_runs <- function(case,curr_wd,ips,maxiteration,Glucose_exchange,Oxyge
    
 3)  **Metabolic model**
 
-    Metabolic model corresponding to the system being studied. If all metabolites in the **MGR** data are already represented as exchange reactions in the current model, no changes are required. Otherwise, sink reactions should be added for the feedback metabolites.
+    Metabolic model corresponding to the system being studied. If all metabolites in the **MGR** data are already represented as exchange reactions in the current model, no changes are required. Otherwise, sink reactions should be added for the feedback metabolites using the "addSinkReactions()" function from COBRA Toolbox.
+    An example case is shown below:
+```matlab
+metabolites_to_be_added_as_sink = {'metA',...
+'metB',...
+'metC',...
+};
 
+metabolic_model_with_sink = addSinkReactions(model = metabolic_model, metabolites = metabolites_to_be_added_as_sink, lb = [zeros(numel(metabolites_to_be_added_as_sink),1)], ub = [zeros(numel(metabolites_to_be_added_as_sink),1)+1000])
+```
 
 ### (B) To be changed in the ".m" scripts
 
 #### M_1b.m
 
-1) Change line 3 for current working directory where the codes/data for running the whole CF framework is stored
-   
-2) Change line 13 for metabolic model name
-
-3) Change line 22 and 23 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-
-4) Change line 25 to modify the start and end indices of the sink reactions
-
-5) Change line 42, 56 to index number corresponding to the biomass reaction in the metabolic model
+|Line|Description|Notes|
+|---|---|---|
+||||
 
 #### M_2a.m
 
-1) Change line 2 for current working directory where the codes/data for running the whole CF framework is stored
-
-2) Change line 15 for metabolic model name
-
-3) Change line 25 and 26 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-
-4) Change line 28 to modify the start and end indices of the sink reactions
-
-5) Change line 32, 51 to index number corresponding to the biomass reaction in the metabolic model
 
 #### M_2d.m
 
-1) Change line 8 for current working directory where the codes/data for running the whole CF framework is stored
 
-2)  Change line 15 for metabolic model name
 
-3)  Change line 24 and 25 for changing the indices of glucose and oxygen exchange reactions in the metabolic model (will vary in different metabolic models)
-
-4)  Change line 27 to modify the start and end indices of the sink reactions
-
-### (C) To be given as arguments to the CF function (in the ".R" script)
-
-1) Check line 1386 when the function is called for performing single gene KO
-   
-2) Check line 1390 when the function is called for performing multiple single gene KOs. Each KO will be done one by one.
 
 
 
