@@ -11,7 +11,7 @@ CausalFlux_runs <- function(case,curr_wd,ips,maxiteration,Glucose_exchange,Oxyge
 |Input arguments|Description|
    |---|---|
    |case|1 for scenario to run single-gene KO or WT condition in E. coli; 2 for scenario to run multiple single-gene KOs in E. coli |
-   |curr_wd|Working directory (directory where ".R", ".m" and ".mat" (metabolic model) scripts are located) |
+   |curr_wd|Working directory (directory where ".R", ".m" and ".mat" (metabolic model) scripts and other necessary files/folders are located)|
    |ips|Gene (gene symbol) to be perturbed (can provide one gene or a vector of genes in a for-loop for perturbation)|
    |maxiteration|Maximum number of iterations|
    |Glucose_exchange|Glucose uptake rate (in mmol/gDCW/hr)|
@@ -66,14 +66,44 @@ metabolic_model_with_sink = addSinkReactions(model = metabolic_model, metabolite
 
 |Line|Description|Notes|
 |---|---|---|
-||||
+|Line 1|Working directory|directory where ".R", ".m" and ".mat" (metabolic model) scripts and other necessary files/folders are located|
+|Line 9|Metabolic model|Metabolic model with added sink reactions|
+|Line 13|Exchnage reactions of metabolic model| a dataframe with index of all exchange reactions in the metabolic model and its name|
+|Line 19|Essential exchnage reactions of metabolic model| a vector with index of only essential exchange reactions in the metabolic model|
+|Line 23|Media constraints| a dataframe with index of the exchange reactions for media condition and the upper bounds for those reactions|
+|Line 31|Glucose reaction|index of glucose exchange reaction|
+|Line 32|Oxygen reaction|index of oxygen exchange reaction|
+|Line 34|sink reaction indices|indices specifying start and end of added sink reactions|
+|Line 52|Biomass reaction|index of biomass reaction|
+|Line 67|Biomass reaction|index of biomass reaction|
 
 #### M_2a.m
 
+|Line|Description|Notes|
+|---|---|---|
+|Line 1|Working directory|directory where ".R", ".m" and ".mat" (metabolic model) scripts and other necessary files/folders are located|
+|Line 9|Metabolic model|Metabolic model with added sink reactions|
+|Line 13|Exchnage reactions of metabolic model| a dataframe with index of all exchange reactions in the metabolic model and its name|
+|Line 19|Essential exchnage reactions of metabolic model| a vector with index of only essential exchange reactions in the metabolic model|
+|Line 23|Media constraints| a dataframe with index of the exchange reactions for media condition and the upper bounds for those reactions|
+|Line 31|Glucose reaction|index of glucose exchange reaction|
+|Line 32|Oxygen reaction|index of oxygen exchange reaction|
+|Line 34|sink reaction indices|indices specifying start and end of added sink reactions|
+|Line 38|Biomass reaction|index of biomass reaction|
+|Line 58|Biomass reaction|index of biomass reaction|
 
 #### M_2d.m
 
-
+|Line|Description|Notes|
+|---|---|---|
+|Line 1|Working directory|directory where ".R", ".m" and ".mat" (metabolic model) scripts and other necessary files/folders are located|
+|Line 9|Metabolic model|Metabolic model with added sink reactions|
+|Line 13|Exchnage reactions of metabolic model| a dataframe with index of all exchange reactions in the metabolic model and its name|
+|Line 19|Essential exchnage reactions of metabolic model| a vector with index of only essential exchange reactions in the metabolic model|
+|Line 23|Media constraints| a dataframe with index of the exchange reactions for media condition and the upper bounds for those reactions|
+|Line 31|Glucose reaction|index of glucose exchange reaction|
+|Line 32|Oxygen reaction|index of oxygen exchange reaction|
+|Line 34|sink reaction indices|indices specifying start and end of added sink reactions|
 
 
 
