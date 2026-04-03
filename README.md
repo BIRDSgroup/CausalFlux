@@ -18,7 +18,7 @@ CF framework is distributed in the hope that it will be useful, but WITHOUT ANY 
 3. Application of CF framework on the real-world data (E. coli)
 
 ### Section 1: Our CF framework
-This section presents the code for the CF framework, applicable to any generic case. It includes information on the datasets required and the function arguments. A detailed methodology is described in our paper.
+This section presents the code for the [CF framework](https://github.com/BIRDSgroup/CausalFlux/tree/main/Our%20CF%20framework), applicable to any generic case. It includes information on the datasets required and the function arguments. A detailed methodology is described in our paper.
 
 ### Section 2: Application of CF framework on the testbed models (TMs)
 This section provides the following information:
@@ -51,5 +51,6 @@ tidyr_1.3.0, tibble_3.2.1, ggplot2_3.4.4, tidyverse_2.0.0, writexl_1.4.2, dplyr_
 
 ### MATLAB
 9.12.0.2039608 (R2022a) Update 5
-
+COnstraint-Based Reconstruction and Analysis The COBRA Toolbox - 2026
+Solver: Gurobi
 
