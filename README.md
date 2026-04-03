@@ -34,7 +34,7 @@ This section provides the following information:
 
 ## Glossary
 - CF - Causal Flux (our methodology)
-- TM - Toy Model
+- TM - Testbed Model
 - GRN - Gene Regulatory Network
 - KO - Knock out
 
