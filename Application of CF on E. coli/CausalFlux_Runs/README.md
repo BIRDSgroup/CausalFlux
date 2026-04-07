@@ -34,7 +34,7 @@ c) After running, the folder **CausalFlux_multi_runs** will be generated contain
 4) The default values for the arguments like **maxiteration**, **Glucose_exchange**, **Oxygen_exchange** and **extra_rxn_exchange** are already set here
 
 ## 798 single-gene KOs
-The predictions from CausalFlux for these 798 single-gene KOs are given [here](https://drive.google.com/drive/folders/1fqiBEupVbZp4vPJ7xnCCexDrCc1OJaQM?usp=sharing). Each of these contains separate files that store different outputs of the algorithm. "FVA_to_check_P1.xlsx" in each of these folders contain the final iteration fluxes values.
+The predictions from CausalFlux for these 798 single-gene KOs are given [here](https://drive.google.com/drive/folders/1fqiBEupVbZp4vPJ7xnCCexDrCc1OJaQM?usp=sharing). Each of these contains separate files that store different outputs of the algorithm. "FVA_to_check_P1.xlsx" in each of these folders contain the final iteration fluxes values. There is also a script "script_to_read_cfpreds.R" provided along with 12 other csv files which you can use to extract the predictions for 798 single-gene KO. Make sure all the folders/files given here are in the same working directory for it to get executed.
 
 The [Overall_Ecoli_preds.csv](https://github.com/BIRDSgroup/CausalFlux/blob/main/Application%20of%20CF%20on%20E.%20coli/CausalFlux_Comparison/Overall_Ecoli_preds.csv) file contains the CausalFlux predictions on the 798 single-gene KOs which has been derived from the individual runs present in the above mentioned Google drive.
 
