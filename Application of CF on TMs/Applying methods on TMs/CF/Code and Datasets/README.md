@@ -42,3 +42,7 @@
      4.2) These results were used to draw conclusions/results in the manuscript
 
      4.3) Supplementary Data 1: all "Cor_PV_RMSE" data combined from TM1, TM2 and TM3 folders
+
+   ## Data folders
+   1) GRN folder contains the learnt GRN structure and parameter information (".rds" files), gene expression data (".csv" file), MGR data, GS data  for each TM and exchange rate
+   2) ODE_simu folder contains the simulated fluxes (actual) for TM, WT/KO condition, and exchange rate
