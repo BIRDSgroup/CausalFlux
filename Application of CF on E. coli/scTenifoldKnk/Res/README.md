@@ -1,1 +1,1 @@
-
+"sctknk_Res.csv" contains the list of 47 genes for which scTenifoldKnk single-KO simulations were performed. The ground-truth (GT), CausalFlux predictions, and scTenifoldKnk predictions are also provided, where 1 indicates a non-essential gene and 0 indicates an essential gene.
