@@ -1,1 +1,1 @@
-
+"Tot_BS_df.csv" contains the list of genes for which KO simulations were performed. The ground-truth (GT) and CausalFlux predictions are also provided, where 1 indicates a non-essential gene and 0 indicates an essential gene.
