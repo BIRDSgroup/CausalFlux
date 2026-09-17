@@ -30,7 +30,9 @@ This section provides the following information:
 This section provides the following information:
 1) Codes/data for running the CF to perform single gene KOs in _E. coli_ [CausalFlux Runs](https://github.com/BIRDSgroup/CausalFlux/tree/main/Application%20of%20CF%20on%20E.%20coli/CausalFlux_Runs)
 2) Codes/data to reconstruct/learn the parameters of the GRN (Gene Regularoty Network) for _E. coli_
+3) Codes/data to run scTenifoldKnk are also given here 
 
+### Section 4: Application of CF framework on the real-world data (B. subtilis)
 
 ## Glossary
 - CF - Causal Flux (our methodology)
